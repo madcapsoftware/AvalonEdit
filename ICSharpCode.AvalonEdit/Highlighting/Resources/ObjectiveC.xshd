@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Objective-C" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <RuleSet>
+    <Keywords color="keyword">
+      <Word>int</Word>
+      <Word>float</Word>
+      <Word>while</Word>
+      <Word>char</Word>
+      <Word>export</Word>
+      <Word>sizeof</Word>
+      <Word>typedef</Word>
+      <Word>const</Word>
+      <Word>struct</Word>
+      <Word>for</Word>
+      <Word>union</Word>
+      <Word>unsigned</Word>
+      <Word>long</Word>
+      <Word>volatile</Word>
+      <Word>static</Word>
+      <Word>bool</Word>
+      <Word>mutable</Word>
+      <Word>if</Word>
+      <Word>do</Word>
+      <Word>return</Word>
+      <Word>goto</Word>
+      <Word>void</Word>
+      <Word>enum</Word>
+      <Word>else</Word>
+      <Word>break</Word>
+      <Word>extern</Word>
+      <Word>asm</Word>
+      <Word>case</Word>
+      <Word>short</Word>
+      <Word>default</Word>
+      <Word>double</Word>
+      <Word>register</Word>
+      <Word>explicit</Word>
+      <Word>signed</Word>
+      <Word>typename</Word>
+      <Word>this</Word>
+      <Word>switch</Word>
+      <Word>continue</Word>
+      <Word>wchar_t</Word>
+      <Word>inline</Word>
+      <Word>readonly</Word>
+      <Word>assign</Word>
+      <Word>readwrite</Word>
+      <Word>self</Word>
+      <Word>@synchronized</Word>
+      <Word>id</Word>
+      <Word>typeof</Word>
+      <Word>nonatomic</Word>
+      <Word>super</Word>
+      <Word>unichar</Word>
+      <Word>IBOutlet</Word>
+      <Word>IBAction</Word>
+      <Word>strong</Word>
+      <Word>weak</Word>
+      <Word>copy</Word>
+      <Word>in</Word>
+      <Word>out</Word>
+      <Word>inout</Word>
+      <Word>bycopy</Word>
+      <Word>byref</Word>
+      <Word>oneway</Word>
+      <Word>__strong</Word>
+      <Word>__weak</Word>
+      <Word>__block</Word>
+      <Word>__autoreleasing</Word>
+      <Word>@private</Word>
+      <Word>@protected</Word>
+      <Word>@public</Word>
+      <Word>@try</Word>
+      <Word>@property</Word>
+      <Word>@end</Word>
+      <Word>@throw</Word>
+      <Word>@catch</Word>
+      <Word>@finally</Word>
+      <Word>@autoreleasepool</Word>
+      <Word>@synthesize</Word>
+      <Word>@dynamic</Word>
+      <Word>@selector</Word>
+      <Word>@optional</Word>
+      <Word>@required</Word>
+      <Word>@encode</Word>
+      <Word>@package</Word>
+      <Word>@import</Word>
+      <Word>@defs</Word>
+      <Word>@compatibility_alias</Word>
+      <Word>__bridge</Word>
+      <Word>__bridge_transfer</Word>
+      <Word>__bridge_retained</Word>
+      <Word>__bridge_retain</Word>
+      <Word>__covariant</Word>
+      <Word>__contravariant</Word>
+      <Word>__kindof</Word>
+      <Word>_Nonnull</Word>
+      <Word>_Nullable</Word>
+      <Word>_Null_unspecified</Word>
+      <Word>__FUNCTION__</Word>
+      <Word>__PRETTY_FUNCTION__</Word>
+      <Word>__attribute__</Word>
+      <Word>getter</Word>
+      <Word>setter</Word>
+      <Word>retain</Word>
+      <Word>unsafe_unretained</Word>
+      <Word>nonnull</Word>
+      <Word>nullable</Word>
+      <Word>null_unspecified</Word>
+      <Word>null_resettable</Word>
+      <Word>class</Word>
+      <Word>instancetype</Word>
+      <Word>NS_DESIGNATED_INITIALIZER</Word>
+      <Word>NS_UNAVAILABLE</Word>
+      <Word>NS_REQUIRES_SUPER</Word>
+      <Word>NS_RETURNS_INNER_POINTER</Word>
+      <Word>NS_INLINE</Word>
+      <Word>NS_AVAILABLE</Word>
+      <Word>NS_DEPRECATED</Word>
+      <Word>NS_ENUM</Word>
+      <Word>NS_OPTIONS</Word>
+      <Word>NS_SWIFT_UNAVAILABLE</Word>
+      <Word>NS_ASSUME_NONNULL_BEGIN</Word>
+      <Word>NS_ASSUME_NONNULL_END</Word>
+      <Word>NS_REFINED_FOR_SWIFT</Word>
+      <Word>NS_SWIFT_NAME</Word>
+      <Word>NS_SWIFT_NOTHROW</Word>
+      <Word>NS_DURING</Word>
+      <Word>NS_HANDLER</Word>
+      <Word>NS_ENDHANDLER</Word>
+      <Word>NS_VALUERETURN</Word>
+      <Word>NS_VOIDRETURN</Word>
+    </Keywords>
+    <Keywords color="literal">
+      <Word>false</Word>
+      <Word>true</Word>
+      <Word>FALSE</Word>
+      <Word>TRUE</Word>
+      <Word>nil</Word>
+      <Word>YES</Word>
+      <Word>NO</Word>
+      <Word>NULL</Word>
+    </Keywords>
+    <Keywords color="built_in">
+      <Word>BOOL</Word>
+      <Word>dispatch_once_t</Word>
+      <Word>dispatch_queue_t</Word>
+      <Word>dispatch_sync</Word>
+      <Word>dispatch_async</Word>
+      <Word>dispatch_once</Word>
+    </Keywords>
+    <Rule color="built_in">\b(AV|CA|CF|CG|CI|CL|CM|CN|CT|MK|MP|MTK|MTL|NS|SCN|SK|UI|WK|XC)\w+</Rule>
+    <Span ruleSet="RuleSet0" multiline="true" color="comment">
+      <Begin>//</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet1" multiline="true" color="comment">
+      <Begin>/\*</Begin>
+      <End>\*/</End>
+    </Span>
+    <Rule>(-?)(\b0[xX][a-fA-F0-9]+|(\b\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?)</Rule>
+    <Span ruleSet="RuleSet2" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Span ruleSet="RuleSet3" color="string">
+      <Begin>@"</Begin>
+      <End>"</End>
+    </Span>
+    <Span color="string">
+      <Begin>'</Begin>
+      <End>[^\\]'</End>
+    </Span>
+    <Span ruleSet="RuleSet4" color="meta">
+      <Begin>\#</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet5">
+      <Begin>(@interface|@class|@protocol|@implementation)\b</Begin>
+      <End>({|$)</End>
+    </Span>
+    <Rule>\.[a-zA-Z_]\w*</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet0">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet1">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet2">
+    <Rule>\\[\s\S]</Rule>
+    <Rule>\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet3">
+    <Rule>\\[\s\S]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet4">
+    <Span>
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Span>
+      <Begin>&lt;</Begin>
+      <End>&gt;</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet5">
+    <Keywords color="keyword">
+      <Word>@interface</Word>
+      <Word>@class</Word>
+      <Word>@protocol</Word>
+      <Word>@implementation</Word>
+    </Keywords>
+    <Rule color="title">[a-zA-Z_]\w*</Rule>
+  </RuleSet>
+  <Color name="comment" foreground="#969896"/>
+  <Color name="meta" foreground="#969896"/>
+  <Color name="string" foreground="#df5000"/>
+  <Color name="keyword" foreground="#a71d5d"/>
+  <Color name="literal" foreground="#0086b3"/>
+  <Color name="title" foreground="#795da3"/>
+  <Color name="built_in" foreground="#0086b3"/>
+</SyntaxDefinition>

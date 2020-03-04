@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Bash" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <RuleSet>
+    <Keywords color="keyword">
+      <Word>if</Word>
+      <Word>then</Word>
+      <Word>else</Word>
+      <Word>elif</Word>
+      <Word>fi</Word>
+      <Word>for</Word>
+      <Word>while</Word>
+      <Word>in</Word>
+      <Word>do</Word>
+      <Word>done</Word>
+      <Word>case</Word>
+      <Word>esac</Word>
+      <Word>function</Word>
+    </Keywords>
+    <Keywords color="literal">
+      <Word>true</Word>
+      <Word>false</Word>
+    </Keywords>
+    <Keywords color="built_in">
+      <Word>break</Word>
+      <Word>cd</Word>
+      <Word>continue</Word>
+      <Word>eval</Word>
+      <Word>exec</Word>
+      <Word>exit</Word>
+      <Word>export</Word>
+      <Word>getopts</Word>
+      <Word>hash</Word>
+      <Word>pwd</Word>
+      <Word>readonly</Word>
+      <Word>return</Word>
+      <Word>shift</Word>
+      <Word>test</Word>
+      <Word>times</Word>
+      <Word>trap</Word>
+      <Word>umask</Word>
+      <Word>unset</Word>
+      <Word>alias</Word>
+      <Word>bind</Word>
+      <Word>builtin</Word>
+      <Word>caller</Word>
+      <Word>command</Word>
+      <Word>declare</Word>
+      <Word>echo</Word>
+      <Word>enable</Word>
+      <Word>help</Word>
+      <Word>let</Word>
+      <Word>local</Word>
+      <Word>logout</Word>
+      <Word>mapfile</Word>
+      <Word>printf</Word>
+      <Word>read</Word>
+      <Word>readarray</Word>
+      <Word>source</Word>
+      <Word>type</Word>
+      <Word>typeset</Word>
+      <Word>ulimit</Word>
+      <Word>unalias</Word>
+      <Word>set</Word>
+      <Word>shopt</Word>
+      <Word>autoload</Word>
+      <Word>bg</Word>
+      <Word>bindkey</Word>
+      <Word>bye</Word>
+      <Word>cap</Word>
+      <Word>chdir</Word>
+      <Word>clone</Word>
+      <Word>comparguments</Word>
+      <Word>compcall</Word>
+      <Word>compctl</Word>
+      <Word>compdescribe</Word>
+      <Word>compfiles</Word>
+      <Word>compgroups</Word>
+      <Word>compquote</Word>
+      <Word>comptags</Word>
+      <Word>comptry</Word>
+      <Word>compvalues</Word>
+      <Word>dirs</Word>
+      <Word>disable</Word>
+      <Word>disown</Word>
+      <Word>echotc</Word>
+      <Word>echoti</Word>
+      <Word>emulate</Word>
+      <Word>fc</Word>
+      <Word>fg</Word>
+      <Word>float</Word>
+      <Word>functions</Word>
+      <Word>getcap</Word>
+      <Word>getln</Word>
+      <Word>history</Word>
+      <Word>integer</Word>
+      <Word>jobs</Word>
+      <Word>kill</Word>
+      <Word>limit</Word>
+      <Word>log</Word>
+      <Word>noglob</Word>
+      <Word>popd</Word>
+      <Word>print</Word>
+      <Word>pushd</Word>
+      <Word>pushln</Word>
+      <Word>rehash</Word>
+      <Word>sched</Word>
+      <Word>setcap</Word>
+      <Word>setopt</Word>
+      <Word>stat</Word>
+      <Word>suspend</Word>
+      <Word>ttyctl</Word>
+      <Word>unfunction</Word>
+      <Word>unhash</Word>
+      <Word>unlimit</Word>
+      <Word>unsetopt</Word>
+      <Word>vared</Word>
+      <Word>wait</Word>
+      <Word>whence</Word>
+      <Word>where</Word>
+      <Word>which</Word>
+      <Word>zcompile</Word>
+      <Word>zformat</Word>
+      <Word>zftp</Word>
+      <Word>zle</Word>
+      <Word>zmodload</Word>
+      <Word>zparseopts</Word>
+      <Word>zprof</Word>
+      <Word>zpty</Word>
+      <Word>zregexparse</Word>
+      <Word>zsocket</Word>
+      <Word>zstyle</Word>
+      <Word>ztcp</Word>
+    </Keywords>
+    <Keywords>
+      <Word>-ne</Word>
+      <Word>-eq</Word>
+      <Word>-lt</Word>
+      <Word>-gt</Word>
+      <Word>-f</Word>
+      <Word>-d</Word>
+      <Word>-e</Word>
+      <Word>-s</Word>
+      <Word>-l</Word>
+      <Word>-a</Word>
+    </Keywords>
+	<Rule color="func_name">\b\w*(?=\()</Rule>
+    <Rule color="meta">^\#![^\n]+sh\s*$</Rule>
+    <Rule>\w[\w\d_]*\s*\(\s*\)\s*\{</Rule>
+    <Span ruleSet="RuleSet0" multiline="true" color="comment">
+      <Begin>\#</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet1" color="string">
+      <Begin>(?&lt;!(\\))"</Begin>
+      <End>(?&lt;!(\\))"</End>
+    </Span>
+    <Span color="string" >
+      <Begin>(?&lt;!(\\))'</Begin>
+      <End>(?&lt;!(\\))'</End>
+    </Span>
+    <Rule color="variable">\$[\w\d#@][\w\d_]*</Rule>
+    <Rule color="variable">\$\{(.*?)}</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet0">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet1">
+    <Rule>\\[\s\S]</Rule>
+    <Rule color="variable">\$[\w\d#@][\w\d_]*</Rule>
+    <Rule color="variable">\$\{(.*?)}</Rule>
+    <Span ruleSet="RuleSet2" color="variable">
+      <Begin>\$\(</Begin>
+      <End>/\)/</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet2">
+    <Rule>\\[\s\S]</Rule>
+  </RuleSet>
+  <Color name="comment" foreground="#969896"/>
+  <Color name="meta" foreground="#969896"/>
+  <Color name="string" foreground="#df5000"/>
+  <Color name="variable" foreground="#8f3300"/>
+  <Color name="func_name" foreground="#a71d5d"/>
+  <Color name="keyword" foreground="#a71d5d"/>
+  <Color name="literal" foreground="#0086b3"/>
+  <Color name="built_in" foreground="#0086b3"/>
+</SyntaxDefinition>

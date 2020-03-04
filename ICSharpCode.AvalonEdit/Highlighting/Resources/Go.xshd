@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Go" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <RuleSet>
+    <Keywords color="keyword">
+      <Word>break</Word>
+      <Word>default</Word>
+      <Word>func</Word>
+      <Word>interface</Word>
+      <Word>select</Word>
+      <Word>case</Word>
+      <Word>map</Word>
+      <Word>struct</Word>
+      <Word>chan</Word>
+      <Word>else</Word>
+      <Word>goto</Word>
+      <Word>package</Word>
+      <Word>switch</Word>
+      <Word>const</Word>
+      <Word>fallthrough</Word>
+      <Word>if</Word>
+      <Word>range</Word>
+      <Word>continue</Word>
+      <Word>for</Word>
+      <Word>import</Word>
+      <Word>return</Word>
+      <Word>var</Word>
+      <Word>go</Word>
+      <Word>defer</Word>
+      <Word>bool</Word>
+      <Word>byte</Word>
+      <Word>complex64</Word>
+      <Word>complex128</Word>
+      <Word>float32</Word>
+      <Word>float64</Word>
+      <Word>int8</Word>
+      <Word>int16</Word>
+      <Word>int32</Word>
+      <Word>int64</Word>
+      <Word>string</Word>
+      <Word>uint8</Word>
+      <Word>uint16</Word>
+      <Word>uint32</Word>
+      <Word>uint64</Word>
+      <Word>int</Word>
+      <Word>uint</Word>
+      <Word>uintptr</Word>
+      <Word>rune</Word>
+    </Keywords>
+    <Keywords color="literal">
+      <Word>true</Word>
+      <Word>false</Word>
+      <Word>iota</Word>
+      <Word>nil</Word>
+    </Keywords>
+    <Keywords color="built_in">
+      <Word>append</Word>
+      <Word>cap</Word>
+      <Word>close</Word>
+      <Word>complex</Word>
+      <Word>copy</Word>
+      <Word>imag</Word>
+      <Word>len</Word>
+      <Word>make</Word>
+      <Word>new</Word>
+      <Word>panic</Word>
+      <Word>print</Word>
+      <Word>println</Word>
+      <Word>real</Word>
+      <Word>recover</Word>
+      <Word>delete</Word>
+    </Keywords>
+	<Span ruleSet="RuleSet01">
+		<Begin color="keyword">\b(type)</Begin>
+		<End>/\s*\{/</End>
+	</Span>
+    <Span ruleSet="RuleSet0" multiline="true" color="comment">
+      <Begin>//</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet1" multiline="true" color="comment">
+      <Begin>/\*</Begin>
+      <End>\*/</End>
+    </Span>
+    <Span ruleSet="RuleSet2" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Span color="string">
+      <Begin>'</Begin>
+      <End>[^\\]'</End>
+    </Span>
+    <Span color="string">
+      <Begin>`</Begin>
+      <End>`</End>
+    </Span>
+    <Rule color="number">(-?)(\b0[xX][a-fA-F0-9]+|(\b\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?)[dflsi]</Rule>
+    <Rule color="number">(-?)(\b0[xX][a-fA-F0-9]+|(\b\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?)</Rule>
+    <Rule>:=</Rule>
+    <Span ruleSet="RuleSet3">
+      <Begin color="keyword">\b(func) </Begin>
+      <End>/\s*\{/</End>
+    </Span>
+	<Rule color="func_call">\b\w*(?=(\())</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet0">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet01">
+    <Keywords color="keyword">
+      <Word>break</Word>
+      <Word>default</Word>
+      <Word>func</Word>
+      <Word>interface</Word>
+      <Word>select</Word>
+      <Word>case</Word>
+      <Word>map</Word>
+      <Word>struct</Word>
+      <Word>chan</Word>
+      <Word>else</Word>
+      <Word>goto</Word>
+      <Word>package</Word>
+      <Word>switch</Word>
+      <Word>const</Word>
+      <Word>fallthrough</Word>
+      <Word>if</Word>
+      <Word>range</Word>
+      <Word>continue</Word>
+      <Word>for</Word>
+      <Word>import</Word>
+      <Word>return</Word>
+      <Word>var</Word>
+      <Word>go</Word>
+      <Word>defer</Word>
+      <Word>bool</Word>
+      <Word>byte</Word>
+      <Word>complex64</Word>
+      <Word>complex128</Word>
+      <Word>float32</Word>
+      <Word>float64</Word>
+      <Word>int8</Word>
+      <Word>int16</Word>
+      <Word>int32</Word>
+      <Word>int64</Word>
+      <Word>string</Word>
+      <Word>uint8</Word>
+      <Word>uint16</Word>
+      <Word>uint32</Word>
+      <Word>uint64</Word>
+      <Word>int</Word>
+      <Word>uint</Word>
+      <Word>uintptr</Word>
+      <Word>rune</Word>
+    </Keywords>
+	<Rule color="title">[a-zA-Z]\w*</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet1">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet2">
+    <Rule>\\[\s\S]</Rule>
+    <Rule>\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet3">
+    <Keywords color="keyword">
+      <Word>func</Word>
+    </Keywords>
+    <Rule color="title">[a-zA-Z]\w*</Rule>
+    <Span ruleSet="RuleSet4">
+      <Begin>\(</Begin>
+      <End>/\)/</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet4">
+    <Keywords color="keyword">
+      <Word>break</Word>
+      <Word>default</Word>
+      <Word>func</Word>
+      <Word>interface</Word>
+      <Word>select</Word>
+      <Word>case</Word>
+      <Word>map</Word>
+      <Word>struct</Word>
+      <Word>chan</Word>
+      <Word>else</Word>
+      <Word>goto</Word>
+      <Word>package</Word>
+      <Word>switch</Word>
+      <Word>const</Word>
+      <Word>fallthrough</Word>
+      <Word>if</Word>
+      <Word>range</Word>
+      <Word>continue</Word>
+      <Word>for</Word>
+      <Word>import</Word>
+      <Word>return</Word>
+      <Word>var</Word>
+      <Word>go</Word>
+      <Word>defer</Word>
+      <Word>bool</Word>
+      <Word>byte</Word>
+      <Word>complex64</Word>
+      <Word>complex128</Word>
+      <Word>float32</Word>
+      <Word>float64</Word>
+      <Word>int8</Word>
+      <Word>int16</Word>
+      <Word>int32</Word>
+      <Word>int64</Word>
+      <Word>string</Word>
+      <Word>uint8</Word>
+      <Word>uint16</Word>
+      <Word>uint32</Word>
+      <Word>uint64</Word>
+      <Word>int</Word>
+      <Word>uint</Word>
+      <Word>uintptr</Word>
+      <Word>rune</Word>
+    </Keywords>
+    <Keywords color="literal">
+      <Word>true</Word>
+      <Word>false</Word>
+      <Word>iota</Word>
+      <Word>nil</Word>
+    </Keywords>
+    <Keywords color="built_in">
+      <Word>append</Word>
+      <Word>cap</Word>
+      <Word>close</Word>
+      <Word>complex</Word>
+      <Word>copy</Word>
+      <Word>imag</Word>
+      <Word>len</Word>
+      <Word>make</Word>
+      <Word>new</Word>
+      <Word>panic</Word>
+      <Word>print</Word>
+      <Word>println</Word>
+      <Word>real</Word>
+      <Word>recover</Word>
+      <Word>delete</Word>
+    </Keywords>
+  </RuleSet>
+  <Color name="comment" foreground="#969896"/>
+  <Color name="string" foreground="#df5000"/>
+  <Color name="keyword" foreground="#a71d5d"/>
+  <Color name="number" foreground="#a71d5d" />
+  <Color name="literal" foreground="#0086b3"/>
+  <Color name="title" foreground="#795da3"/>
+  <Color name="built_in" foreground="#005d7d"/>
+  <Color name="func_call" foreground="#005d7d"/>
+</SyntaxDefinition>

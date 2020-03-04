@@ -56,6 +56,22 @@ namespace ICSharpCode.AvalonEdit.Editing
 		/// </summary>
 		protected double emSize;
 
+		int mStartLineNumber;
+		/// <summary>
+		/// The first number for the line numbers
+		/// </summary>
+		public int StartingLineNumber {
+			get { return mStartLineNumber + 1; }
+			set {
+				if (value < 1) {
+					Console.Write(/*NUI*/"Cannot set start line number less than 1");
+					value = 1;
+				}
+				mStartLineNumber = value - 1;
+				InvalidateVisual();
+			}
+		}
+
 		/// <inheritdoc/>
 		protected override Size MeasureOverride(Size availableSize)
 		{
@@ -80,7 +96,7 @@ namespace ICSharpCode.AvalonEdit.Editing
 			if (textView != null && textView.VisualLinesValid) {
 				var foreground = (Brush)GetValue(Control.ForegroundProperty);
 				foreach (VisualLine line in textView.VisualLines) {
-					int lineNumber = line.FirstDocumentLine.LineNumber;
+					int lineNumber = line.FirstDocumentLine.LineNumber + mStartLineNumber;
 					FormattedText text = TextFormatterFactory.CreateFormattedText(
 						this,
 						lineNumber.ToString(CultureInfo.CurrentCulture),

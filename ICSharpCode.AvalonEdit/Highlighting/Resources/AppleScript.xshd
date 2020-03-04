@@ -1,0 +1,215 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="AppleScript" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <RuleSet>
+    <Keywords color="keyword">
+      <Word>about</Word>
+      <Word>above</Word>
+      <Word>after</Word>
+      <Word>against</Word>
+      <Word>and</Word>
+      <Word>around</Word>
+      <Word>as</Word>
+      <Word>at</Word>
+      <Word>back</Word>
+      <Word>before</Word>
+      <Word>beginning</Word>
+      <Word>behind</Word>
+      <Word>below</Word>
+      <Word>beneath</Word>
+      <Word>beside</Word>
+      <Word>between</Word>
+      <Word>but</Word>
+      <Word>by</Word>
+      <Word>considering</Word>
+      <Word>contain</Word>
+      <Word>contains</Word>
+      <Word>continue</Word>
+      <Word>copy</Word>
+      <Word>div</Word>
+      <Word>does</Word>
+      <Word>eighth</Word>
+      <Word>else</Word>
+      <Word>end</Word>
+      <Word>equal</Word>
+      <Word>equals</Word>
+      <Word>error</Word>
+      <Word>every</Word>
+      <Word>exit</Word>
+      <Word>fifth</Word>
+      <Word>first</Word>
+      <Word>for</Word>
+      <Word>fourth</Word>
+      <Word>from</Word>
+      <Word>front</Word>
+      <Word>get</Word>
+      <Word>given</Word>
+      <Word>global</Word>
+      <Word>if</Word>
+      <Word>ignoring</Word>
+      <Word>in</Word>
+      <Word>into</Word>
+      <Word>is</Word>
+      <Word>it</Word>
+      <Word>its</Word>
+      <Word>last</Word>
+      <Word>local</Word>
+      <Word>me</Word>
+      <Word>middle</Word>
+      <Word>mod</Word>
+      <Word>my</Word>
+      <Word>ninth</Word>
+      <Word>not</Word>
+      <Word>of</Word>
+      <Word>on</Word>
+      <Word>onto</Word>
+      <Word>or</Word>
+      <Word>over</Word>
+      <Word>prop</Word>
+      <Word>property</Word>
+      <Word>put</Word>
+      <Word>ref</Word>
+      <Word>reference</Word>
+      <Word>repeat</Word>
+      <Word>returning</Word>
+      <Word>script</Word>
+      <Word>second</Word>
+      <Word>set</Word>
+      <Word>seventh</Word>
+      <Word>since</Word>
+      <Word>sixth</Word>
+      <Word>some</Word>
+      <Word>tell</Word>
+      <Word>tenth</Word>
+      <Word>that</Word>
+      <Word>the|0</Word>
+      <Word>then</Word>
+      <Word>third</Word>
+      <Word>through</Word>
+      <Word>thru</Word>
+      <Word>timeout</Word>
+      <Word>times</Word>
+      <Word>to</Word>
+      <Word>transaction</Word>
+      <Word>try</Word>
+      <Word>until</Word>
+      <Word>where</Word>
+      <Word>while</Word>
+      <Word>whose</Word>
+      <Word>with</Word>
+      <Word>without</Word>
+    </Keywords>
+    <Keywords color="literal">
+      <Word>AppleScript</Word>
+      <Word>false</Word>
+      <Word>linefeed</Word>
+      <Word>return</Word>
+      <Word>pi</Word>
+      <Word>quote</Word>
+      <Word>result</Word>
+      <Word>space</Word>
+      <Word>tab</Word>
+      <Word>true</Word>
+    </Keywords>
+    <Keywords color="built_in">
+      <Word>alias</Word>
+      <Word>application</Word>
+      <Word>boolean</Word>
+      <Word>class</Word>
+      <Word>constant</Word>
+      <Word>date</Word>
+      <Word>file</Word>
+      <Word>integer</Word>
+      <Word>list</Word>
+      <Word>number</Word>
+      <Word>real</Word>
+      <Word>record</Word>
+      <Word>string</Word>
+      <Word>text</Word>
+      <Word>activate</Word>
+      <Word>beep</Word>
+      <Word>count</Word>
+      <Word>delay</Word>
+      <Word>launch</Word>
+      <Word>log</Word>
+      <Word>offset</Word>
+      <Word>read</Word>
+      <Word>round</Word>
+      <Word>run</Word>
+      <Word>say</Word>
+      <Word>summarize</Word>
+      <Word>write</Word>
+      <Word>character</Word>
+      <Word>characters</Word>
+      <Word>contents</Word>
+      <Word>day</Word>
+      <Word>frontmost</Word>
+      <Word>id</Word>
+      <Word>item</Word>
+      <Word>length</Word>
+      <Word>month</Word>
+      <Word>name</Word>
+      <Word>paragraph</Word>
+      <Word>paragraphs</Word>
+      <Word>rest</Word>
+      <Word>reverse</Word>
+      <Word>running</Word>
+      <Word>time</Word>
+      <Word>version</Word>
+      <Word>weekday</Word>
+      <Word>word</Word>
+      <Word>words</Word>
+      <Word>year</Word>
+    </Keywords>
+    <Span ruleSet="RuleSet0" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Rule color="number">(-?)(\b0[xX][a-fA-F0-9]+|(\b\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?)</Rule>
+    <Rule color="built_in">\b(clipboard\ info|the\ clipboard|info\ for|list\ (disks|folder)|mount\ volume|path\ to|(close|open\ for)\ access|(get|set)\ eof|current\ date|do\ shell\ script|get\ volume\ settings|random\ number|set\ volume|system\ attribute|system\ info|time\ to\ GMT|(load|run|store)\ script|scripting\ components|ASCII\ (character|number)|localized\ string|choose\ (application|color|file|file\ name|folder|from\ list|remote\ application|URL)|display\ (alert|dialog))\b|^\s*return\b</Rule>
+    <Rule color="literal">\b(text\ item\ delimiters|current\ application|missing\ value)\b</Rule>
+    <Rule color="keyword">\b(apart\ from|aside\ from|instead\ of|out\ of|greater\ than|isn't|(doesn't|does\ not)\ (equal|come\ before|come\ after|contain)|(greater|less)\ than(\ or\ equal)?|(starts?|ends|begins?)\ with|contained\ by|comes\ (before|after)|a\ (ref|reference)|POSIX\ file|POSIX\ path|(date|time)\ string|quoted\ form)\b</Rule>
+    <Rule>\b(on) </Rule>
+    <Span ruleSet="RuleSet1" multiline="true" color="comment">
+      <Begin>--</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet2" multiline="true" color="comment">
+      <Begin>\(\*</Begin>
+      <End>\*\)</End>
+    </Span>
+    <Span ruleSet="RuleSet3" multiline="true" color="comment">
+      <Begin>\#</Begin>
+      <End>$</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet0">
+    <Rule>\\[\s\S]</Rule>
+    <Rule>\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet1">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet2">
+    <Span ruleSet="RuleSet2" multiline="true" color="comment">
+      <Begin>\(\*</Begin>
+      <End>\*\)</End>
+    </Span>
+    <Span ruleSet="RuleSet1" multiline="true" color="comment">
+      <Begin>--</Begin>
+      <End>$</End>
+    </Span>
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet3">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <Color name="comment" foreground="#969896"/>
+  <Color name="string" foreground="#df5000"/>
+  <Color name="keyword" foreground="#a71d5d"/>
+  <Color name="literal" foreground="#0086b3"/>
+  <Color name="built_in" foreground="#0086b3"/>
+  <Color name="number" foreground="#005cc5"/>
+</SyntaxDefinition>

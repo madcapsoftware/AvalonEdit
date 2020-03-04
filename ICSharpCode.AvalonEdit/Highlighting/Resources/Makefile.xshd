@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Makefile" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <RuleSet>
+    <Keywords color="keyword">
+      <Word>define</Word>
+      <Word>endef</Word>
+      <Word>undefine</Word>
+      <Word>ifdef</Word>
+      <Word>ifndef</Word>
+      <Word>ifeq</Word>
+      <Word>ifneq</Word>
+      <Word>else</Word>
+      <Word>endif</Word>
+      <Word>include</Word>
+      <Word>-include</Word>
+      <Word>sinclude</Word>
+      <Word>override</Word>
+      <Word>export</Word>
+      <Word>unexport</Word>
+      <Word>private</Word>
+      <Word>vpath</Word>
+    </Keywords>
+    <Span ruleSet="RuleSet0" multiline="true" color="comment">
+      <Begin>\#</Begin>
+      <End>$</End>
+    </Span>
+    <Rule color="variable">\$\([a-zA-Z_]\w*\)</Rule>
+    <Rule color="variable">\$[@%&lt;?\^\+\*]</Rule>
+    <Span ruleSet="RuleSet1" color="string">
+      <Begin>"</Begin>
+      <End>/"/</End>
+    </Span>
+    <Span ruleSet="RuleSet2" color="variable">
+      <Begin>\$\([\w-]+\s</Begin>
+      <End>/\)/</End>
+    </Span>
+    <Rule>^[a-zA-Z_]\w*\s*[:+?]?=</Rule>
+    <Span ruleSet="RuleSet3" color="meta">
+      <Begin>^\.PHONY:</Begin>
+      <End>/$/</End>
+    </Span>
+    <Span ruleSet="RuleSet4" color="section">
+      <Begin>^[^\s]+:</Begin>
+      <End>/$/</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet0">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet1">
+    <Rule>\\[\s\S]</Rule>
+    <Rule color="variable">\$\([a-zA-Z_]\w*\)</Rule>
+    <Rule color="variable">\$[@%&lt;?\^\+\*]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet2">
+    <Keywords color="built_in">
+      <Word>subst</Word>
+      <Word>patsubst</Word>
+      <Word>strip</Word>
+      <Word>findstring</Word>
+      <Word>filter</Word>
+      <Word>filter-out</Word>
+      <Word>sort</Word>
+      <Word>word</Word>
+      <Word>wordlist</Word>
+      <Word>firstword</Word>
+      <Word>lastword</Word>
+      <Word>dir</Word>
+      <Word>notdir</Word>
+      <Word>suffix</Word>
+      <Word>basename</Word>
+      <Word>addsuffix</Word>
+      <Word>addprefix</Word>
+      <Word>join</Word>
+      <Word>wildcard</Word>
+      <Word>realpath</Word>
+      <Word>abspath</Word>
+      <Word>error</Word>
+      <Word>warning</Word>
+      <Word>shell</Word>
+      <Word>origin</Word>
+      <Word>flavor</Word>
+      <Word>foreach</Word>
+      <Word>if</Word>
+      <Word>or</Word>
+      <Word>and</Word>
+      <Word>call</Word>
+      <Word>eval</Word>
+      <Word>file</Word>
+      <Word>value</Word>
+    </Keywords>
+    <Rule color="variable">\$\([a-zA-Z_]\w*\)</Rule>
+    <Rule color="variable">\$[@%&lt;?\^\+\*]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet3">
+    <Keywords>
+      <Word>.PHONY</Word>
+    </Keywords>
+  </RuleSet>
+  <RuleSet name="RuleSet4">
+    <Rule color="variable">\$\([a-zA-Z_]\w*\)</Rule>
+    <Rule color="variable">\$[@%&lt;?\^\+\*]</Rule>
+  </RuleSet>
+  <Color name="comment" foreground="#969896"/>
+  <Color name="meta" foreground="#969896"/>
+  <Color name="string" foreground="#df5000"/>
+  <Color name="variable" foreground="#df5000"/>
+  <Color name="keyword" foreground="#a71d5d"/>
+  <Color name="section" foreground="#63a35c"/>
+  <Color name="built_in" foreground="#0086b3"/>
+</SyntaxDefinition>

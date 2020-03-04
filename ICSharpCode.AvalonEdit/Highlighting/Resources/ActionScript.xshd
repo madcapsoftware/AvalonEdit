@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="ActionScript" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <RuleSet>
+    <Keywords color="keyword">
+      <Word>as</Word>
+      <Word>break</Word>
+      <Word>case</Word>
+      <Word>catch</Word>
+      <Word>class</Word>
+      <Word>const</Word>
+      <Word>continue</Word>
+      <Word>default</Word>
+      <Word>delete</Word>
+      <Word>do</Word>
+      <Word>dynamic</Word>
+      <Word>each</Word>
+      <Word>else</Word>
+      <Word>extends</Word>
+      <Word>final</Word>
+      <Word>finally</Word>
+      <Word>for</Word>
+      <Word>function</Word>
+      <Word>get</Word>
+      <Word>if</Word>
+      <Word>implements</Word>
+      <Word>import</Word>
+      <Word>in</Word>
+      <Word>include</Word>
+      <Word>instanceof</Word>
+      <Word>interface</Word>
+      <Word>internal</Word>
+      <Word>is</Word>
+      <Word>namespace</Word>
+      <Word>native</Word>
+      <Word>new</Word>
+      <Word>override</Word>
+      <Word>package</Word>
+      <Word>private</Word>
+      <Word>protected</Word>
+      <Word>public</Word>
+      <Word>return</Word>
+      <Word>set</Word>
+      <Word>static</Word>
+      <Word>super</Word>
+      <Word>switch</Word>
+      <Word>this</Word>
+      <Word>throw</Word>
+      <Word>try</Word>
+      <Word>typeof</Word>
+      <Word>use</Word>
+      <Word>var</Word>
+      <Word>void</Word>
+      <Word>while</Word>
+      <Word>with</Word>
+    </Keywords>
+    <Keywords color="literal">
+      <Word>true</Word>
+      <Word>false</Word>
+      <Word>null</Word>
+      <Word>undefined</Word>
+    </Keywords>
+    <Span ruleSet="RuleSet0" color="string">
+      <Begin>'</Begin>
+      <End>'</End>
+    </Span>
+    <Span ruleSet="RuleSet1" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Span ruleSet="RuleSet2" multiline="true" color="comment">
+      <Begin>//</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet3" multiline="true" color="comment">
+      <Begin>/\*</Begin>
+      <End>\*/</End>
+    </Span>
+    <Rule color="number">(-?)(\b0[xX][a-fA-F0-9]+|(\b\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?)</Rule>
+    <Span ruleSet="RuleSet4">
+      <Begin>\b(package) </Begin>
+      <End>{</End>
+    </Span>
+    <Span ruleSet="RuleSet5">
+      <Begin>\b(class|interface) </Begin>
+      <End>{</End>
+    </Span>
+    <Span ruleSet="RuleSet6" color="meta">
+      <Begin>\b(import|include) </Begin>
+      <End>;</End>
+    </Span>
+    <Span ruleSet="RuleSet7">
+      <Begin>\b(function) </Begin>
+      <End>[{;]</End>
+    </Span>
+    <Rule>\.\s*[a-zA-Z_]\w*</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet0">
+    <Rule>\\[\s\S]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet1">
+    <Rule>\\[\s\S]</Rule>
+    <Rule>\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet2">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet3">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet4">
+    <Keywords color="keyword">
+      <Word>package</Word>
+    </Keywords>
+    <Rule color="title">[a-zA-Z]\w*</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet5">
+    <Keywords color="keyword">
+      <Word>class</Word>
+      <Word>interface</Word>
+    </Keywords>
+    <Rule>\b(extends|implements) </Rule>
+    <Rule color="title">[a-zA-Z]\w*</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet6">
+    <Keywords color="keyword">
+      <Word>import</Word>
+      <Word>include</Word>
+    </Keywords>
+  </RuleSet>
+  <RuleSet name="RuleSet7">
+    <Keywords color="keyword">
+      <Word>function</Word>
+    </Keywords>
+    <Rule color="title">[a-zA-Z]\w*</Rule>
+    <Span ruleSet="RuleSet8">
+      <Begin>\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Rule>:\s*([*]|[a-zA-Z_$][a-zA-Z0-9_$]*)</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet8">
+    <Span ruleSet="RuleSet0" color="string">
+      <Begin>'</Begin>
+      <End>'</End>
+    </Span>
+    <Span ruleSet="RuleSet1" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Span ruleSet="RuleSet2" multiline="true" color="comment">
+      <Begin>//</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet3" multiline="true" color="comment">
+      <Begin>/\*</Begin>
+      <End>\*/</End>
+    </Span>
+    <Span>
+      <Begin>[.]{3}</Begin>
+      <End>[a-zA-Z_$][a-zA-Z0-9_$]*</End>
+    </Span>
+  </RuleSet>
+  <Color name="comment" foreground="#969896"/>
+  <Color name="meta" foreground="#969896"/>
+  <Color name="string" foreground="#df5000"/>
+  <Color name="keyword" foreground="#a71d5d"/>
+  <Color name="number" foreground="#a71d5d"/>
+  <Color name="literal" foreground="#0086b3"/>
+  <Color name="title" foreground="#795da3"/>
+</SyntaxDefinition>

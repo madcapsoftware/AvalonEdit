@@ -1,0 +1,287 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Lua" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <RuleSet>
+    <Keywords color="literal">
+      <Word>true</Word>
+      <Word>false</Word>
+      <Word>nil</Word>
+    </Keywords>
+    <Keywords color="keyword">
+      <Word>and</Word>
+      <Word>break</Word>
+      <Word>do</Word>
+      <Word>else</Word>
+      <Word>elseif</Word>
+      <Word>end</Word>
+      <Word>for</Word>
+      <Word>goto</Word>
+      <Word>if</Word>
+      <Word>in</Word>
+      <Word>local</Word>
+      <Word>not</Word>
+      <Word>or</Word>
+      <Word>repeat</Word>
+      <Word>return</Word>
+      <Word>then</Word>
+      <Word>until</Word>
+      <Word>while</Word>
+    </Keywords>
+    <Keywords color="built_in">
+      <Word>_G</Word>
+      <Word>_ENV</Word>
+      <Word>_VERSION</Word>
+      <Word>__index</Word>
+      <Word>__newindex</Word>
+      <Word>__mode</Word>
+      <Word>__call</Word>
+      <Word>__metatable</Word>
+      <Word>__tostring</Word>
+      <Word>__len</Word>
+      <Word>__gc</Word>
+      <Word>__add</Word>
+      <Word>__sub</Word>
+      <Word>__mul</Word>
+      <Word>__div</Word>
+      <Word>__mod</Word>
+      <Word>__pow</Word>
+      <Word>__concat</Word>
+      <Word>__unm</Word>
+      <Word>__eq</Word>
+      <Word>__lt</Word>
+      <Word>__le</Word>
+      <Word>assert</Word>
+      <Word>collectgarbage</Word>
+      <Word>dofile</Word>
+      <Word>error</Word>
+      <Word>getfenv</Word>
+      <Word>getmetatable</Word>
+      <Word>ipairs</Word>
+      <Word>load</Word>
+      <Word>loadfile</Word>
+      <Word>loadstringmodule</Word>
+      <Word>next</Word>
+      <Word>pairs</Word>
+      <Word>pcall</Word>
+      <Word>print</Word>
+      <Word>rawequal</Word>
+      <Word>rawget</Word>
+      <Word>rawset</Word>
+      <Word>require</Word>
+      <Word>select</Word>
+      <Word>setfenvsetmetatable</Word>
+      <Word>tonumber</Word>
+      <Word>tostring</Word>
+      <Word>type</Word>
+      <Word>unpack</Word>
+      <Word>xpcall</Word>
+      <Word>arg</Word>
+      <Word>selfcoroutine</Word>
+      <Word>resume</Word>
+      <Word>yield</Word>
+      <Word>status</Word>
+      <Word>wrap</Word>
+      <Word>create</Word>
+      <Word>running</Word>
+      <Word>debug</Word>
+      <Word>getupvalue</Word>
+      <Word>debug</Word>
+      <Word>sethook</Word>
+      <Word>getmetatable</Word>
+      <Word>gethook</Word>
+      <Word>setmetatable</Word>
+      <Word>setlocal</Word>
+      <Word>traceback</Word>
+      <Word>setfenv</Word>
+      <Word>getinfo</Word>
+      <Word>setupvalue</Word>
+      <Word>getlocal</Word>
+      <Word>getregistry</Word>
+      <Word>getfenv</Word>
+      <Word>io</Word>
+      <Word>lines</Word>
+      <Word>write</Word>
+      <Word>close</Word>
+      <Word>flush</Word>
+      <Word>open</Word>
+      <Word>output</Word>
+      <Word>type</Word>
+      <Word>read</Word>
+      <Word>stderr</Word>
+      <Word>stdin</Word>
+      <Word>input</Word>
+      <Word>stdout</Word>
+      <Word>popen</Word>
+      <Word>tmpfile</Word>
+      <Word>math</Word>
+      <Word>log</Word>
+      <Word>max</Word>
+      <Word>acos</Word>
+      <Word>huge</Word>
+      <Word>ldexp</Word>
+      <Word>pi</Word>
+      <Word>cos</Word>
+      <Word>tanh</Word>
+      <Word>pow</Word>
+      <Word>deg</Word>
+      <Word>tan</Word>
+      <Word>cosh</Word>
+      <Word>sinh</Word>
+      <Word>random</Word>
+      <Word>randomseed</Word>
+      <Word>frexp</Word>
+      <Word>ceil</Word>
+      <Word>floor</Word>
+      <Word>rad</Word>
+      <Word>abs</Word>
+      <Word>sqrt</Word>
+      <Word>modf</Word>
+      <Word>asin</Word>
+      <Word>min</Word>
+      <Word>mod</Word>
+      <Word>fmod</Word>
+      <Word>log10</Word>
+      <Word>atan2</Word>
+      <Word>exp</Word>
+      <Word>sin</Word>
+      <Word>atan</Word>
+      <Word>os</Word>
+      <Word>exit</Word>
+      <Word>setlocale</Word>
+      <Word>date</Word>
+      <Word>getenv</Word>
+      <Word>difftime</Word>
+      <Word>remove</Word>
+      <Word>time</Word>
+      <Word>clock</Word>
+      <Word>tmpname</Word>
+      <Word>rename</Word>
+      <Word>execute</Word>
+      <Word>package</Word>
+      <Word>preload</Word>
+      <Word>loadlib</Word>
+      <Word>loaded</Word>
+      <Word>loaders</Word>
+      <Word>cpath</Word>
+      <Word>config</Word>
+      <Word>path</Word>
+      <Word>seeall</Word>
+      <Word>string</Word>
+      <Word>sub</Word>
+      <Word>upper</Word>
+      <Word>len</Word>
+      <Word>gfind</Word>
+      <Word>rep</Word>
+      <Word>find</Word>
+      <Word>match</Word>
+      <Word>char</Word>
+      <Word>dump</Word>
+      <Word>gmatch</Word>
+      <Word>reverse</Word>
+      <Word>byte</Word>
+      <Word>format</Word>
+      <Word>gsub</Word>
+      <Word>lower</Word>
+      <Word>table</Word>
+      <Word>setn</Word>
+      <Word>insert</Word>
+      <Word>getn</Word>
+      <Word>foreachi</Word>
+      <Word>maxn</Word>
+      <Word>foreach</Word>
+      <Word>concat</Word>
+      <Word>sort</Word>
+      <Word>remove</Word>
+    </Keywords>
+    <Span ruleSet="RuleSet0" multiline="true" color="comment">
+      <Begin>--(?!\[=*\[)</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet1" multiline="true" color="comment">
+      <Begin>--\[=*\[</Begin>
+      <End>\]=*\]</End>
+    </Span>
+    <Span ruleSet="RuleSet3">
+      <Begin color="keyword">\b(function) </Begin>
+      <End>\)</End>
+    </Span>
+    <Rule color="Digits">(-?)(\b0[xX][a-fA-F0-9]+|(\b\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?)</Rule>
+    <Span ruleSet="RuleSet5" color="string">
+      <Begin>'</Begin>
+      <End>'</End>
+    </Span>
+    <Span ruleSet="RuleSet6" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Span ruleSet="RuleSet7" color="string" multiline="true">
+      <Begin>\[=*\[</Begin>
+      <End>\]=*\]</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet0">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet1">
+    <Span ruleSet="RuleSet2" multiline="true">
+      <Begin>\[=*\[</Begin>
+      <End>\]=*\]</End>
+    </Span>
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet2">
+    <Span ruleSet="RuleSet2" multiline="true">
+      <Begin>\[=*\[</Begin>
+      <End>\]=*\]</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet3">
+    <Keywords color="keyword">
+      <Word>function</Word>
+    </Keywords>
+    <Rule color="title">([_a-zA-Z]\w*\.)*([_a-zA-Z]\w*:)?[_a-zA-Z]\w*</Rule>
+    <Span ruleSet="RuleSet4">
+      <Begin>\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Span ruleSet="RuleSet0" multiline="true" color="comment">
+      <Begin>--(?!\[=*\[)</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet1" multiline="true" color="comment">
+      <Begin>--\[=*\[</Begin>
+      <End>\]=*\]</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet4">
+    <Span ruleSet="RuleSet0" multiline="true" color="comment">
+      <Begin>--(?!\[=*\[)</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet1" multiline="true" color="comment">
+      <Begin>--\[=*\[</Begin>
+      <End>\]=*\]</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet5">
+    <Rule>\\[\s\S]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet6">
+    <Rule>\\[\s\S]</Rule>
+    <Rule>\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet7">
+    <Span ruleSet="RuleSet2" multiline="true">
+      <Begin>\[=*\[</Begin>
+      <End>\]=*\]</End>
+    </Span>
+  </RuleSet>
+  <Color name="comment" foreground="#969896"/>
+  <Color name="string" foreground="#df5000"/>
+  <Color name="keyword" foreground="#a71d5d"/>
+  <Color name="literal" foreground="#0086b3"/>
+  <Color name="title" foreground="#795da3"/>
+  <Color name="built_in" foreground="#0086b3"/>
+  <Color name="Digits" foreground="#008080" />
+</SyntaxDefinition>

@@ -44,7 +44,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 			hlm.RegisterHighlighting("Boo", new[] { ".boo" }, "Boo.xshd");
 			hlm.RegisterHighlighting("Coco", new[] { ".atg" }, "Coco-Mode.xshd");
 			hlm.RegisterHighlighting("CSS", new[] { ".css" }, "CSS-Mode.xshd");
-			hlm.RegisterHighlighting("C++", new[] { ".c", ".h", ".cc", ".cpp", ".hpp" }, "CPP-Mode.xshd");
+			hlm.RegisterHighlighting("C/C++", new[] { ".c", ".h", ".cc", ".cpp", ".hpp" }, "CPP-Mode.xshd");
 			hlm.RegisterHighlighting("Java", new[] { ".java" }, "Java-Mode.xshd");
 			hlm.RegisterHighlighting("Patch", new[] { ".patch", ".diff" }, "Patch-Mode.xshd");
 			hlm.RegisterHighlighting("PowerShell", new[] { ".ps1", ".psm1", ".psd1" }, "PowerShell.xshd");
@@ -61,6 +61,8 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 			hlm.RegisterHighlighting("MarkDown", new[] { ".md" }, "MarkDown-Mode.xshd");
 			hlm.RegisterHighlighting("MarkDownWithFontSize", new[] { ".md" }, "MarkDownWithFontSize-Mode.xshd");
 			hlm.RegisterHighlighting("Json", new[] { ".json" }, "Json.xshd");
+
+			McHighlightingManager.RegisterHighlightingAndSort(hlm);
 		}
 	}
 }

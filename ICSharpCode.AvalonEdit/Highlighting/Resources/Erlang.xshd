@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Erlang" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <RuleSet>
+    <Keywords color="keyword">
+      <Word>after</Word>
+      <Word>and</Word>
+      <Word>andalso|10</Word>
+      <Word>band</Word>
+      <Word>begin</Word>
+      <Word>bnot</Word>
+      <Word>bor</Word>
+      <Word>bsl</Word>
+      <Word>bzr</Word>
+      <Word>bxor</Word>
+      <Word>case</Word>
+      <Word>catch</Word>
+      <Word>cond</Word>
+      <Word>div</Word>
+      <Word>end</Word>
+      <Word>fun</Word>
+      <Word>if</Word>
+      <Word>let</Word>
+      <Word>not</Word>
+      <Word>of</Word>
+      <Word>orelse|10</Word>
+      <Word>query</Word>
+      <Word>receive</Word>
+      <Word>rem</Word>
+      <Word>try</Word>
+      <Word>when</Word>
+      <Word>xor</Word>
+    </Keywords>
+    <Keywords color="literal">
+      <Word>false</Word>
+      <Word>true</Word>
+    </Keywords>
+    <Span ruleSet="RuleSet0">
+      <Begin color="function">^[a-z'][a-zA-Z0-9_']*\s*(?=(\())</Begin>
+      <End>-&gt;</End>
+    </Span>
+    <Span ruleSet="RuleSet2" multiline="true" color="comment">
+      <Begin>%</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet9">
+      <Begin color="keyword">^-</Begin>
+      <End>\.</End>
+    </Span>
+    <Rule color="function">\b(\d+\#[a-fA-F0-9]+|\d+(\.\d+)?([eE][-+]?\d+)?)</Rule>
+    <Span ruleSet="RuleSet7" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Rule>\#[a-zA-Z_]\w*</Rule>
+    <Rule>\b_([A-Z][A-Za-z0-9_]*)?</Rule>
+    <Rule>[A-Z][a-zA-Z0-9_]*</Rule>
+    <Span ruleSet="RuleSet8">
+      <Begin>{</Begin>
+      <End>}</End>
+    </Span>
+    <Rule>\.$</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet0">
+    <Span ruleSet="RuleSet1">
+      <Begin>\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Rule color="title">[A-Za-z'][a-zA-Z0-9_']*</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet1">
+    <Span ruleSet="RuleSet2" multiline="true" color="comment">
+      <Begin>%</Begin>
+      <End>$</End>
+    </Span>
+    <Rule color="function">\b(\d+\#[a-fA-F0-9]+|\d+(\.\d+)?([eE][-+]?\d+)?)</Rule>
+    <Rule>fun\s+[a-z'][a-zA-Z0-9_']*/\d+</Rule>
+    <Span ruleSet="RuleSet3">
+      <Begin>\b(fun|receive|if|try|case) </Begin>
+      <End>end</End>
+    </Span>
+    <Span ruleSet="RuleSet5">
+      <Begin>([a-z'][a-zA-Z0-9_']*:[a-z'][a-zA-Z0-9_']*|[a-z'][a-zA-Z0-9_']*)\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Span ruleSet="RuleSet7" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Rule>\b(\d+\#[a-fA-F0-9]+|\d+(\.\d+)?([eE][-+]?\d+)?)</Rule>
+    <Span ruleSet="RuleSet8">
+      <Begin>{</Begin>
+      <End>}</End>
+    </Span>
+    <Rule>\b_([A-Z][A-Za-z0-9_]*)?</Rule>
+    <Rule>[A-Z][a-zA-Z0-9_]*</Rule>
+    <Rule>\#[a-zA-Z_]\w*</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet2">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet3">
+    <Keywords color="keyword">
+      <Word>fun</Word>
+      <Word>receive</Word>
+      <Word>if</Word>
+      <Word>try</Word>
+      <Word>case</Word>
+    </Keywords>
+    <Span ruleSet="RuleSet2" multiline="true" color="comment">
+      <Begin>%</Begin>
+      <End>$</End>
+    </Span>
+    <Rule>fun\s+[a-z'][a-zA-Z0-9_']*/\d+</Rule>
+    <Span ruleSet="RuleSet4">
+      <Begin>'</Begin>
+      <End>'</End>
+    </Span>
+    <Span ruleSet="RuleSet3">
+      <Begin>\b(fun|receive|if|try|case) </Begin>
+      <End>end</End>
+    </Span>
+    <Span ruleSet="RuleSet5">
+      <Begin>([a-z'][a-zA-Z0-9_']*:[a-z'][a-zA-Z0-9_']*|[a-z'][a-zA-Z0-9_']*)\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Span ruleSet="RuleSet7" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Rule>\b(\d+\#[a-fA-F0-9]+|\d+(\.\d+)?([eE][-+]?\d+)?)</Rule>
+    <Span ruleSet="RuleSet8">
+      <Begin>{</Begin>
+      <End>}</End>
+    </Span>
+    <Rule>\b_([A-Z][A-Za-z0-9_]*)?</Rule>
+    <Rule>[A-Z][a-zA-Z0-9_]*</Rule>
+    <Rule>\#[a-zA-Z_]\w*</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet4">
+    <Rule>\\[\s\S]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet5">
+    <Rule>([a-z'][a-zA-Z0-9_']*:[a-z'][a-zA-Z0-9_']*|[a-z'][a-zA-Z0-9_']*)</Rule>
+    <Span ruleSet="RuleSet6">
+      <Begin>\(</Begin>
+      <End>\)|\)</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet6">
+    <Span ruleSet="RuleSet2" multiline="true" color="comment">
+      <Begin>%</Begin>
+      <End>$</End>
+    </Span>
+    <Rule>fun\s+[a-z'][a-zA-Z0-9_']*/\d+</Rule>
+    <Span ruleSet="RuleSet3">
+      <Begin>\b(fun|receive|if|try|case) </Begin>
+      <End>end</End>
+    </Span>
+    <Span ruleSet="RuleSet5">
+      <Begin>([a-z'][a-zA-Z0-9_']*:[a-z'][a-zA-Z0-9_']*|[a-z'][a-zA-Z0-9_']*)\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Span ruleSet="RuleSet7" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Rule>\b(\d+\#[a-fA-F0-9]+|\d+(\.\d+)?([eE][-+]?\d+)?)</Rule>
+    <Span ruleSet="RuleSet8">
+      <Begin>{</Begin>
+      <End>}</End>
+    </Span>
+    <Rule>\b_([A-Z][A-Za-z0-9_]*)?</Rule>
+    <Rule>[A-Z][a-zA-Z0-9_]*</Rule>
+    <Rule>\#[a-zA-Z_]\w*</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet7">
+    <Rule>\\[\s\S]</Rule>
+    <Rule>\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet8">
+    <Span ruleSet="RuleSet2" multiline="true" color="comment">
+      <Begin>%</Begin>
+      <End>$</End>
+    </Span>
+    <Rule>fun\s+[a-z'][a-zA-Z0-9_']*/\d+</Rule>
+    <Span ruleSet="RuleSet3">
+      <Begin>\b(fun|receive|if|try|case) </Begin>
+      <End>end</End>
+    </Span>
+    <Span ruleSet="RuleSet5">
+      <Begin>([a-z'][a-zA-Z0-9_']*:[a-z'][a-zA-Z0-9_']*|[a-z'][a-zA-Z0-9_']*)\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Span ruleSet="RuleSet7" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Rule>\b(\d+\#[a-fA-F0-9]+|\d+(\.\d+)?([eE][-+]?\d+)?)</Rule>
+    <Span ruleSet="RuleSet8">
+      <Begin>{</Begin>
+      <End>}</End>
+    </Span>
+    <Rule>\b_([A-Z][A-Za-z0-9_]*)?</Rule>
+    <Rule>[A-Z][a-zA-Z0-9_]*</Rule>
+    <Rule>\#[a-zA-Z_]\w*</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet9">
+	  <Keywords color="keyword">
+      <Word>module</Word>
+      <Word>record</Word>
+      <Word>undef</Word>
+      <Word>export</Word>
+      <Word>ifdef</Word>
+      <Word>ifndef</Word>
+      <Word>author</Word>
+      <Word>copyright</Word>
+      <Word>doc</Word>
+      <Word>vsn</Word>
+      <Word>import</Word>
+      <Word>include</Word>
+      <Word>include_lib</Word>
+      <Word>compile</Word>
+      <Word>define</Word>
+      <Word>else</Word>
+      <Word>endif</Word>
+      <Word>file</Word>
+      <Word>behaviour</Word>
+      <Word>behavior</Word>
+      <Word>spec</Word>
+	  </Keywords>
+    <Span ruleSet="RuleSet1">
+      <Begin>\(</Begin>
+      <End>\)</End>
+    </Span>
+  </RuleSet>
+  <Color name="comment" foreground="#969896"/>
+  <Color name="string" foreground="#df5000"/>
+  <Color name="keyword" foreground="#333333" fontWeight="bold"/>
+  <Color name="function" foreground="#a71d5d" fontWeight="bold"/>
+  <Color name="literal" foreground="#0086b3"/>
+  <Color name="title" foreground="#795da3"/>
+</SyntaxDefinition>

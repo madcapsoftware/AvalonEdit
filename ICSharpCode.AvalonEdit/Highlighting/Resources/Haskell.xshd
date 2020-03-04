@@ -1,0 +1,425 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Haskell" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <RuleSet>
+    <Keywords color="keyword">
+      <Word>let</Word>
+      <Word>in</Word>
+      <Word>if</Word>
+      <Word>then</Word>
+      <Word>else</Word>
+      <Word>case</Word>
+      <Word>of</Word>
+      <Word>where</Word>
+      <Word>do</Word>
+      <Word>module</Word>
+      <Word>import</Word>
+      <Word>hiding</Word>
+      <Word>qualified</Word>
+      <Word>type</Word>
+      <Word>data</Word>
+      <Word>newtype</Word>
+      <Word>deriving</Word>
+      <Word>class</Word>
+      <Word>instance</Word>
+      <Word>as</Word>
+      <Word>default</Word>
+      <Word>infix</Word>
+      <Word>infixl</Word>
+      <Word>infixr</Word>
+      <Word>foreign</Word>
+      <Word>export</Word>
+      <Word>ccall</Word>
+      <Word>stdcall</Word>
+      <Word>cplusplus</Word>
+      <Word>jvm</Word>
+      <Word>dotnet</Word>
+      <Word>safe</Word>
+      <Word>unsafe</Word>
+      <Word>family</Word>
+      <Word>forall</Word>
+      <Word>mdo</Word>
+      <Word>proc</Word>
+      <Word>rec</Word>
+    </Keywords>
+    <Span ruleSet="RuleSet0" multiline="true">
+      <Begin color="keyword">\b(module) </Begin>
+      <End color="keyword">where</End>
+    </Span>
+    <Span ruleSet="RuleSet6">
+      <Begin color="keyword">\bimport\b</Begin>
+      <End color="keyword">$</End>
+    </Span>
+    <Span ruleSet="RuleSet9" multiline="true">
+      <Begin color="keyword">^(\s*)?(class|instance)\b</Begin>
+      <End color="keyword">where</End>
+    </Span>
+    <Span ruleSet="RuleSet12">
+      <Begin color="keyword">\b(data|(new)?type)\b</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet18">
+      <Begin color="keyword">\b(default) </Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet21">
+      <Begin color="keyword">\b(infix|infixl|infixr) </Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet24">
+      <Begin color="keyword">\bforeign\b</Begin>
+      <End>$</End>
+    </Span>
+    <Span color="meta">
+      <Begin>\#!\/usr\/bin\/env runhaskell</Begin>
+      <End>$</End>
+    </Span>
+    <Span color="meta">
+      <Begin>{-\#</Begin>
+      <End>\#-}</End>
+    </Span>
+    <Span color="meta">
+      <Begin>^\#</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet25" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Rule color="digits">(-?)(\b0[xX][a-fA-F0-9]+|(\b\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?)</Rule>
+    <Rule color="type">\b[A-Z][\w']*</Rule>
+    <Rule color="title">^[_a-z][\w']*</Rule>
+    <Span ruleSet="RuleSet28" multiline="true" color="comment">
+      <Begin>--</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet29" multiline="true" color="comment">
+      <Begin>{-</Begin>
+      <End>-}</End>
+    </Span>
+    <Rule>-&gt;|&lt;-</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet0">
+    <Keywords color="keyword">
+      <Word>module</Word>
+    </Keywords>
+    <Span ruleSet="RuleSet1" multiline="true">
+      <Begin>\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Span ruleSet="RuleSet4" multiline="true" color="comment">
+      <Begin>--</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet5" multiline="true" color="comment">
+      <Begin>{-</Begin>
+      <End>-}</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet1">
+    <Span color="meta">
+      <Begin>{-\#</Begin>
+      <End>\#-}</End>
+    </Span>
+    <Span color="meta">
+      <Begin>^\#</Begin>
+      <End>$</End>
+    </Span>
+    <Rule color="type">\b[A-Z][\w]*(\((\.\.|,|\w+)\))?</Rule>
+    <Rule color="title">[_a-z][\w']*</Rule>
+	<Span ruleSet="RuleSet1" multiline="true">
+      <Begin>\(</Begin>
+      <End>\)</End>
+	</Span>
+    <Span ruleSet="RuleSet2" multiline="true" color="comment">
+      <Begin>--</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet3" multiline="true" color="comment">
+      <Begin>{-</Begin>
+      <End>-}</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet2">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet3">
+    <Span ruleSet="RuleSet3" multiline="true" color="comment">
+      <Begin>{-</Begin>
+      <End>-}</End>
+    </Span>
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet4">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet5">
+    <Span ruleSet="RuleSet5" multiline="true" color="comment">
+      <Begin>{-</Begin>
+      <End>-}</End>
+    </Span>
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet6">
+    <Keywords color="keyword">
+      <Word>import</Word>
+      <Word>qualified</Word>
+      <Word>as</Word>
+      <Word>hiding</Word>
+    </Keywords>
+    <Span ruleSet="RuleSet1" multiline="true">
+      <Begin>\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Span ruleSet="RuleSet7" multiline="true" color="comment">
+      <Begin>--</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet8" multiline="true" color="comment">
+      <Begin>{-</Begin>
+      <End>-}</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet7">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet8">
+	<Span ruleSet="RuleSet8" multiline="true" color="comment">
+		<Begin>{-</Begin>
+		<End>-}</End>
+	</Span>
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet9">
+    <Keywords color="keyword">
+      <Word>class</Word>
+      <Word>family</Word>
+      <Word>instance</Word>
+      <Word>where</Word>
+    </Keywords>
+    <Rule color="type">\b[A-Z][\w']*</Rule>
+    <Span ruleSet="RuleSet1" multiline="true">
+      <Begin>\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Span ruleSet="RuleSet10" multiline="true" color="comment">
+      <Begin>--</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet11" multiline="true" color="comment">
+      <Begin>{-</Begin>
+      <End>-}</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet10">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet11">
+	<Span ruleSet="RuleSet11" multiline="true" color="comment">
+		<Begin>{-</Begin>
+		<End>-}</End>
+	</Span>
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet12">
+    <Keywords color="keyword">
+      <Word>data</Word>
+      <Word>family</Word>
+      <Word>type</Word>
+      <Word>newtype</Word>
+      <Word>deriving</Word>
+    </Keywords>
+    <Span color="meta">
+      <Begin>{-\#</Begin>
+      <End>\#-}</End>
+    </Span>
+    <Rule color="type">\b[A-Z][\w']*</Rule>
+    <Span ruleSet="RuleSet1" multiline="true">
+      <Begin>\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Span ruleSet="RuleSet13" multiline="true">
+      <Begin>{</Begin>
+      <End>}</End>
+    </Span>
+    <Span ruleSet="RuleSet16" multiline="true" color="comment">
+      <Begin>--</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet17" multiline="true" color="comment">
+      <Begin>{-</Begin>
+      <End>-}</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet13">
+    <Span color="meta">
+      <Begin>{-\#</Begin>
+      <End>\#-}</End>
+    </Span>
+    <Span color="meta">
+      <Begin>^\#</Begin>
+      <End>$</End>
+    </Span>
+    <Rule color="type">\b[A-Z][\w]*(\((\.\.|,|\w+)\))?</Rule>
+    <Rule color="title">[_a-z][\w']*</Rule>
+    <Span ruleSet="RuleSet14" multiline="true" color="comment">
+      <Begin>--</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet15" multiline="true" color="comment">
+      <Begin>{-</Begin>
+      <End>-}</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet14">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet15">
+	<Span ruleSet="RuleSet15" multiline="true" color="comment">
+		<Begin>{-</Begin>
+		<End>-}</End>
+	</Span>
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet16">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet17">
+	<Span ruleSet="RuleSet17" multiline="true" color="comment">
+		<Begin>{-</Begin>
+		<End>-}</End>
+	</Span>
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet18">
+    <Keywords color="keyword">
+      <Word>default</Word>
+    </Keywords>
+    <Rule color="type">\b[A-Z][\w']*</Rule>
+    <Span ruleSet="RuleSet1" multiline="true">
+      <Begin>\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Span ruleSet="RuleSet19" multiline="true" color="comment">
+      <Begin>--</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet20" multiline="true" color="comment">
+      <Begin>{-</Begin>
+      <End>-}</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet19">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet20">
+	<Span ruleSet="RuleSet20" multiline="true" color="comment">
+		<Begin>{-</Begin>
+		<End>-}</End>
+	</Span>
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet21">
+    <Keywords color="keyword">
+      <Word>infix</Word>
+      <Word>infixl</Word>
+      <Word>infixr</Word>
+    </Keywords>
+    <Rule>(-?)(\b0[xX][a-fA-F0-9]+|(\b\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?)</Rule>
+    <Span ruleSet="RuleSet22" multiline="true" color="comment">
+      <Begin>--</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet23" multiline="true" color="comment">
+      <Begin>{-</Begin>
+      <End>-}</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet22">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet23">
+	<Span ruleSet="RuleSet23" multiline="true" color="comment">
+		<Begin>{-</Begin>
+		<End>-}</End>
+	</Span>
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet24">
+    <Keywords color="keyword">
+      <Word>foreign</Word>
+      <Word>import</Word>
+      <Word>export</Word>
+      <Word>ccall</Word>
+      <Word>stdcall</Word>
+      <Word>cplusplus</Word>
+      <Word>jvm</Word>
+      <Word>dotnet</Word>
+      <Word>safe</Word>
+      <Word>unsafe</Word>
+    </Keywords>
+    <Rule color="type">\b[A-Z][\w']*</Rule>
+    <Span ruleSet="RuleSet25" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Span ruleSet="RuleSet26" multiline="true" color="comment">
+      <Begin>--</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet26" multiline="true" color="comment">
+      <Begin>{-</Begin>
+      <End>-}</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet25">
+    <Rule>\\[\s\S]</Rule>
+    <Rule>\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+\# *.0-9]*[dioxXucsfeEgGp]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet26">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet27">
+	<Span ruleSet="RuleSet27" multiline="true" color="comment">
+		<Begin>{-</Begin>
+		<End>-}</End>
+	</Span>
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet28">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet29">
+	<Span ruleSet="RuleSet29" multiline="true" color="comment">
+		<Begin>{-</Begin>
+		<End>-}</End>
+	</Span>
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <Color name="comment" foreground="#969896"/>
+  <Color name="meta" foreground="#969896"/>
+  <Color name="string" foreground="#df5000"/>
+  <Color name="keyword" foreground="#333333" fontWeight="bold"/>
+  <Color name="type" foreground="#a71d5d"/>
+  <Color name="title" foreground="#a71d5d" fontWeight="bold"/>
+  <Color name="digits" foreground="#a71d5d"/>
+</SyntaxDefinition>

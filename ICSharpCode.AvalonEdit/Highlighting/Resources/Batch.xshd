@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Batch" extensions=".bat;.cmd" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+	<Color name="comment" foreground="#969896"/>
+	<Color name="string" foreground="#df5000" />
+	<Color name="keyword" foreground="#a71d5d"/>
+	<Color name="number" foreground="#005cc5"/>
+	<Color name="variable" foreground="#8f3300"/>
+	<Color name="label" foreground="#a71d5d" fontWeight="bold"/>
+	<Color name="built_in" foreground="#0086b3"/>
+	<RuleSet ignoreCase="true">
+		<Rule color="number">
+			(\b0[xX][0-9a-fA-F]+  # hex number
+			|
+			(	\b\d+(\.[0-9]+)?   #number with optional floating point
+			|	\.[0-9]+           #or just starting with floating point
+			)
+			([eE][+-]?[0-9]+)?)\b # optional exponent
+		</Rule>
+		<Span color="comment" multiline="true">
+			<Begin>REM([\w\W]*)\^$</Begin>
+			<End>(?&lt;!\^)$</End>
+		</Span>
+		<Span color="comment">
+			<Begin>REM</Begin>
+			<End>$</End>
+		</Span>
+		<Span color="comment">
+			<Begin>::</Begin>
+			<End>$</End>
+		</Span>
+		<Span color="string">
+			<Begin>"</Begin>
+			<End>"</End>
+			<RuleSet>
+				<Span>
+					<Begin>%%</Begin>
+					<End>\b</End>
+				</Span>
+				<Span color="variable">
+					<Begin>%(?!~)</Begin>
+					<End>((?&lt;=%)([\d*](\b|%)))|%</End>
+				</Span>
+				<Span color="variable">
+					<Begin>%~</Begin>
+					<End>(\s|$)</End>
+				</Span>
+			</RuleSet>
+		</Span>
+		<Span>
+			<Begin>%%</Begin>
+			<End>\b</End>
+		</Span>
+		<Span color="variable">
+			<Begin>%(?!~)</Begin>
+			<End>((?&lt;=%)([\d*](\b|%)))|%</End>
+		</Span>
+		<Span color="variable">
+			<Begin>%~</Begin>
+			<End>(\s|$)</End>
+		</Span>
+		<Rule color="label">:\w+</Rule>
+		<Keywords color="keyword">
+			<Word>aux</Word>
+			<Word>baud</Word>
+			<Word>break</Word>
+			<Word>call</Word>
+			<Word>cd</Word>
+			<Word>chcp</Word>
+			<Word>chdir</Word>
+			<Word>choice</Word>
+			<Word>cls</Word>
+			<Word>cmdextversion</Word>
+			<Word>cols</Word>
+			<Word>com</Word>
+			<Word>con</Word>
+			<Word>copy</Word>
+			<Word>cp</Word>
+			<Word>cut</Word>
+			<Word>data</Word>
+			<Word>defined</Word>
+			<Word>del</Word>
+			<Word>delay</Word>
+			<Word>dir</Word>
+			<Word>do</Word><Word>aux</Word>
+			<Word>baud</Word>
+			<Word>break</Word>
+			<Word>call</Word>
+			<Word>cd</Word>
+			<Word>chcp</Word>
+			<Word>chdir</Word>
+			<Word>choice</Word>
+			<Word>cls</Word>
+			<Word>cmdextversion</Word>
+			<Word>cols</Word>
+			<Word>com</Word>
+			<Word>con</Word>
+			<Word>copy</Word>
+			<Word>cp</Word>
+			<Word>cut</Word>
+			<Word>data</Word>
+			<Word>defined</Word>
+			<Word>del</Word>
+			<Word>delay</Word>
+			<Word>dir</Word>
+			<Word>do</Word>
+			<Word>dtr</Word>
+			<Word>echo</Word>
+			<Word>else</Word>
+			<Word>end</Word>
+			<Word>equ</Word>
+			<Word>erase</Word>
+			<Word>errorlevel</Word>
+			<Word>exist</Word>
+			<Word>exists</Word>
+			<Word>exit</Word>
+			<Word>for</Word>
+			<Word>geq</Word>
+			<Word>goto</Word>
+			<Word>gtr</Word>
+			<Word>hs</Word>
+			<Word>idsr</Word>
+			<Word>if</Word>
+			<Word>in</Word>
+			<Word>leq</Word>
+			<Word>lfnfor</Word>
+			<Word>lines</Word>
+			<Word>loadfix</Word>
+			<Word>loadhigh</Word>
+			<Word>lock</Word>
+			<Word>low</Word>
+			<Word>lpt</Word>
+			<Word>lpt1</Word>
+			<Word>lss</Word>
+			<Word>max</Word>
+			<Word>md</Word>
+			<Word>min</Word>
+			<Word>mkdir</Word>
+			<Word>mov</Word>
+			<Word>neq</Word>
+			<Word>normal</Word>
+			<Word>not</Word>
+			<Word>nul</Word>
+			<Word>octs</Word>
+			<Word>odsr</Word>
+			<Word>off</Word>
+			<Word>on</Word>
+			<Word>parity</Word>
+			<Word>path</Word>
+			<Word>pause</Word>
+			<Word>prn</Word>
+			<Word>prompt</Word>
+			<Word>rate</Word>
+			<Word>rd</Word>
+			<Word>realtime</Word>
+			<Word>ren</Word>
+			<Word>rename</Word>
+			<Word>rmd</Word>
+			<Word>rmdir</Word>
+			<Word>rts</Word>
+			<Word>select</Word>
+			<Word>separate</Word>
+			<Word>set</Word>
+			<Word>sgn</Word>
+			<Word>shared</Word>
+			<Word>shift</Word>
+			<Word>status</Word>
+			<Word>stop</Word>
+			<Word>tg</Word>
+			<Word>then</Word>
+			<Word>time</Word>
+			<Word>to</Word>
+			<Word>truename</Word>
+			<Word>type</Word>
+			<Word>unlock</Word>
+			<Word>ver</Word>
+			<Word>verify</Word>
+			<Word>vol</Word>
+			<Word>wait</Word>
+			<Word>xon</Word>
+		</Keywords>
+		<Keywords color="built_in">
+			<Word>append</Word>
+			<Word>assoc</Word>
+			<Word>at</Word>
+			<Word>attrib</Word>
+			<Word>begin</Word>
+			<Word>cacls</Word>
+			<Word>chksdsk</Word>
+			<Word>chkntfs</Word>
+			<Word>cmd</Word>
+			<Word>color</Word>
+			<Word>comp</Word>
+			<Word>compact</Word>
+			<Word>convert</Word>
+			<Word>ctty</Word>
+			<Word>date</Word>
+			<Word>delims</Word>
+			<Word>diskcomp</Word>
+			<Word>diskcopy</Word>
+			<Word>doskey</Word>
+			<Word>enableextensions</Word>
+			<Word>endlocal</Word>
+			<Word>eol</Word>
+			<Word>fc</Word>
+			<Word>find</Word>
+			<Word>findstr</Word>
+			<Word>format</Word>
+			<Word>ftype</Word>
+			<Word>graftabl</Word>
+			<Word>help</Word>
+			<Word>keyb</Word>
+			<Word>label</Word>
+			<Word>mklink</Word>
+			<Word>mode</Word>
+			<Word>more</Word>
+			<Word>other</Word>
+			<Word>ping</Word>
+			<Word>popd</Word>
+			<Word>print</Word>
+			<Word>pushd</Word>
+			<Word>recover</Word>
+			<Word>replace</Word>
+			<Word>restore</Word>
+			<Word>setlocal</Word>
+			<Word>skip</Word>
+			<Word>sort</Word>
+			<Word>start</Word>
+			<Word>subst</Word>
+			<Word>title</Word>
+			<Word>tokens</Word>
+			<Word>tree</Word>
+			<Word>ttrib</Word>
+			<Word>xcopy</Word>
+		</Keywords>
+	</RuleSet>
+</SyntaxDefinition>

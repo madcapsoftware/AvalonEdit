@@ -470,12 +470,34 @@ namespace ICSharpCode.AvalonEdit
 			set { SetValue(ShowLineNumbersProperty, Boxes.Box(value)); }
 		}
 
+		public static readonly DependencyProperty MinLineNumbersProperty =
+			DependencyProperty.Register("MinLineNumber", typeof(int), typeof(TextEditor),
+				new FrameworkPropertyMetadata(OnMinLineNumbersChanged));
+
+		/// <summary>
+		/// Minumum line number for text editor
+		/// </summary>
+		public int MinLineNumber {
+			get { return (int)GetValue(MinLineNumbersProperty); }
+			set { SetValue(MinLineNumbersProperty, value); }
+		}
+
+		static void OnMinLineNumbersChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+		{
+			if (lnm != null)
+				lnm.StartingLineNumber = (int)e.NewValue;
+		}
+
+		private static LineNumberMargin lnm;
+
 		static void OnShowLineNumbersChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 		{
 			TextEditor editor = (TextEditor)d;
 			var leftMargins = editor.TextArea.LeftMargins;
 			if ((bool)e.NewValue) {
-				LineNumberMargin lineNumbers = new LineNumberMargin();
+				var lineNumbers = new LineNumberMargin();
+				lnm = lineNumbers;
+
 				Line line = (Line)DottedLineMargin.Create();
 				leftMargins.Insert(0, lineNumbers);
 				leftMargins.Insert(1, line);
@@ -515,7 +537,8 @@ namespace ICSharpCode.AvalonEdit
 		static void OnLineNumbersForegroundChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 		{
 			TextEditor editor = (TextEditor)d;
-			var lineNumberMargin = editor.TextArea.LeftMargins.FirstOrDefault(margin => margin is LineNumberMargin) as LineNumberMargin; ;
+			var lineNumberMargin = editor.TextArea.LeftMargins.FirstOrDefault(margin => margin is LineNumberMargin) as LineNumberMargin;
+			lnm = lineNumberMargin;
 
 			if (lineNumberMargin != null) {
 				lineNumberMargin.SetValue(Control.ForegroundProperty, e.NewValue);

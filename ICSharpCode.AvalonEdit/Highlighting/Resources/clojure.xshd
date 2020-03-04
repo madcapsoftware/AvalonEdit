@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Clojure" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <RuleSet>
+    <Span ruleSet="RuleSet0">
+      <Begin>\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Span ruleSet="RuleSet2" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Rule multiline="true" color="comment">\^[a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'][a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'0-9/;:]*</Rule>
+    <Span ruleSet="RuleSet3" multiline="true" color="comment">
+      <Begin>\^\{</Begin>
+      <End>\}</End>
+    </Span>
+    <Span ruleSet="RuleSet5" multiline="true" color="comment">
+      <Begin>;</Begin>
+      <End>$</End>
+    </Span>
+    <Rule color="symbol">[:]{1,2}[a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'][a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'0-9/;:]*</Rule>
+    <Span ruleSet="RuleSet4">
+      <Begin>[\[\{]</Begin>
+      <End>[\]\}]</End>
+    </Span>
+    <Rule>[-+]?\d+(\.\d+)?</Rule>
+    <Rule color="literal">\b(true|false|nil)\b</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet0">
+    <Rule multiline="true" color="comment">comment</Rule>
+    <Rule color="name">[a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'][a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'0-9/;:]*</Rule>
+    <Span ruleSet="RuleSet1">
+      <Begin>\(</Begin>
+      <End>\)</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet1">
+    <Span ruleSet="RuleSet0">
+      <Begin>\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Span ruleSet="RuleSet2" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Rule multiline="true" color="comment">\^[a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'][a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'0-9/;:]*</Rule>
+    <Span ruleSet="RuleSet3" multiline="true" color="comment">
+      <Begin>\^\{</Begin>
+      <End>\}</End>
+    </Span>
+    <Span ruleSet="RuleSet5" multiline="true" color="comment">
+      <Begin>;</Begin>
+      <End>$</End>
+    </Span>
+    <Rule color="symbol">[:]{1,2}[a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'][a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'0-9/;:]*</Rule>
+    <Span ruleSet="RuleSet4">
+      <Begin>[\[\{]</Begin>
+      <End>[\]\}]</End>
+    </Span>
+    <Rule>[-+]?\d+(\.\d+)?</Rule>
+    <Rule color="literal">\b(true|false|nil)\b</Rule>
+    <Rule>[a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'][a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'0-9/;:]*</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet2">
+    <Rule>\\[\s\S]</Rule>
+    <Rule>\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet3">
+    <Span ruleSet="RuleSet4">
+      <Begin>[\[\{]</Begin>
+      <End>[\]\}]</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet4">
+    <Span ruleSet="RuleSet0">
+      <Begin>\(</Begin>
+      <End>\)</End>
+    </Span>
+    <Span ruleSet="RuleSet2" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Rule multiline="true" color="comment">\^[a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'][a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'0-9/;:]*</Rule>
+    <Span ruleSet="RuleSet3" multiline="true" color="comment">
+      <Begin>\^\{</Begin>
+      <End>\}</End>
+    </Span>
+    <Span ruleSet="RuleSet5" multiline="true" color="comment">
+      <Begin>;</Begin>
+      <End>$</End>
+    </Span>
+    <Rule color="symbol">[:]{1,2}[a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'][a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'0-9/;:]*</Rule>
+    <Span ruleSet="RuleSet4">
+      <Begin>[\[\{]</Begin>
+      <End>[\]\}]</End>
+    </Span>
+    <Rule>[-+]?\d+(\.\d+)?</Rule>
+    <Rule color="literal">\b(true|false|nil)\b</Rule>
+    <Rule>[a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'][a-zA-Z_\-!.?+*=&lt;&gt;&amp;#'0-9/;:]*</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet5">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <Color name="comment" foreground="#969896"/>
+  <Color name="string" foreground="#df5000"/>
+  <Color name="literal" foreground="#0086b3"/>
+  <Color name="symbol" foreground="#0086b3"/>
+  <Color name="name" foreground="#63a35c"/>
+</SyntaxDefinition>

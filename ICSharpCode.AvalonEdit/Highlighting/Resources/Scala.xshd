@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Scala" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <RuleSet>
+    <Keywords color="literal">
+      <Word>true</Word>
+      <Word>false</Word>
+      <Word>null</Word>
+    </Keywords>
+    <Keywords color="keyword">
+      <Word>type</Word>
+      <Word>yield</Word>
+      <Word>lazy</Word>
+      <Word>override</Word>
+      <Word>def</Word>
+      <Word>with</Word>
+      <Word>val</Word>
+      <Word>var</Word>
+      <Word>sealed</Word>
+      <Word>abstract</Word>
+      <Word>private</Word>
+      <Word>trait</Word>
+      <Word>object</Word>
+      <Word>if</Word>
+      <Word>forSome</Word>
+      <Word>for</Word>
+      <Word>while</Word>
+      <Word>throw</Word>
+      <Word>finally</Word>
+      <Word>protected</Word>
+      <Word>extends</Word>
+      <Word>import</Word>
+      <Word>final</Word>
+      <Word>return</Word>
+      <Word>else</Word>
+      <Word>break</Word>
+      <Word>new</Word>
+      <Word>catch</Word>
+      <Word>super</Word>
+      <Word>class</Word>
+      <Word>case</Word>
+      <Word>package</Word>
+      <Word>default</Word>
+      <Word>try</Word>
+      <Word>this</Word>
+      <Word>match</Word>
+      <Word>continue</Word>
+      <Word>throws</Word>
+      <Word>implicit</Word>
+    </Keywords>
+    <Span ruleSet="RuleSet0" multiline="true" color="comment">
+      <Begin>//</Begin>
+      <End>$</End>
+    </Span>
+    <Span ruleSet="RuleSet1" multiline="true" color="comment">
+      <Begin>/\*</Begin>
+      <End>\*/</End>
+    </Span>
+    <Span ruleSet="RuleSet2" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Span color="string">
+      <Begin>"""</Begin>
+      <End>"""</End>
+    </Span>
+    <Span ruleSet="RuleSet3" color="string">
+      <Begin>[a-z]+"</Begin>
+      <End>"</End>
+    </Span>
+    <Span ruleSet="RuleSet4" color="string">
+      <Begin>[a-z]+"""</Begin>
+      <End>"""</End>
+    </Span>
+    <Rule color="symbol">'\w[\w\d_]*(?!')</Rule>
+    <Rule color="type">\b[A-Z][A-Za-z0-9_]*</Rule>
+    <Span ruleSet="RuleSet5">
+      <Begin>\b(def) </Begin>
+      <End>/[:={\[(\n;]/</End>
+    </Span>
+    <Span ruleSet="RuleSet6">
+      <Begin>\b(class|object|trait|type) </Begin>
+      <End>/[:={\[\n;]/</End>
+    </Span>
+    <Rule color="Digits">(-?)(\b0[xX][a-fA-F0-9]+|(\b\d+(\.\d*)?|\.\d+)([eE][-+]?\d+)?)</Rule>
+    <Rule color="meta">@[A-Za-z]+</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet0">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet1">
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet2">
+    <Rule>\\[\s\S]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet3">
+    <Rule>\\[\s\S]</Rule>
+    <Rule>\$[A-Za-z0-9_]+</Rule>
+    <Span>
+      <Begin>\${</Begin>
+      <End>}</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet4">
+    <Rule>\$[A-Za-z0-9_]+</Rule>
+    <Span>
+      <Begin>\${</Begin>
+      <End>}</End>
+    </Span>
+  </RuleSet>
+  <RuleSet name="RuleSet5">
+    <Keywords color="keyword">
+      <Word>def</Word>
+    </Keywords>
+    <Rule color="title">[^0-9\n\t "'(),.`{}\[\]:;][^\n\t "'(),.`{}\[\]:;]+|[^0-9\n\t "'(),.`{}\[\]:;=]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet6">
+    <Keywords color="keyword">
+      <Word>class</Word>
+      <Word>object</Word>
+      <Word>trait</Word>
+      <Word>type</Word>
+    </Keywords>
+    <Rule>\b(extends|with) </Rule>
+    <Span ruleSet="RuleSet7">
+      <Begin>\[</Begin>
+      <End>/\]/</End>
+    </Span>
+    <Span ruleSet="RuleSet8">
+      <Begin>\(</Begin>
+      <End>/\)/</End>
+    </Span>
+    <Rule color="title">[^0-9\n\t "'(),.`{}\[\]:;][^\n\t "'(),.`{}\[\]:;]+|[^0-9\n\t "'(),.`{}\[\]:;=]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet7">
+    <Rule color="type">\b[A-Z][A-Za-z0-9_]*</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet8">
+    <Rule color="type">\b[A-Z][A-Za-z0-9_]*</Rule>
+  </RuleSet>
+  <Color name="comment" foreground="#969896"/>
+  <Color name="meta" foreground="#969896"/>
+  <Color name="string" foreground="#df5000"/>
+  <Color name="keyword" foreground="#a71d5d"/>
+  <Color name="type" foreground="#a71d5d"/>
+  <Color name="literal" foreground="#0086b3"/>
+  <Color name="symbol" foreground="#0086b3"/>
+  <Color name="title" foreground="#795da3"/>
+  <Color name="Digits" foreground="#008080" />
+</SyntaxDefinition>

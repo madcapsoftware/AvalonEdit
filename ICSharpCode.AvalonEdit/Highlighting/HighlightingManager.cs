@@ -159,6 +159,14 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 		}
 
 		/// <summary>
+		/// Sorts highlighting definitions by name alphabetically
+		/// </summary>
+		public void SortDefinitions()
+		{
+			allHighlightings.Sort((a, b) => String.Compare(a.Name, b.Name));
+		}
+
+		/// <summary>
 		/// Gets a highlighting definition by extension.
 		/// Returns null if the definition is not found.
 		/// </summary>
@@ -241,11 +249,11 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 							xshd = Xshd.HighlightingLoader.LoadXshd(reader, false);
 						}
 					}
-					Debug.Assert(name == xshd.Name);
-					if (extensions != null)
-						Debug.Assert(System.Linq.Enumerable.SequenceEqual(extensions, xshd.Extensions));
-					else
-						Debug.Assert(xshd.Extensions.Count == 0);
+					//Debug.Assert(name == xshd.Name);
+					//if (extensions != null)
+					//	Debug.Assert(System.Linq.Enumerable.SequenceEqual(extensions, xshd.Extensions));
+					//else
+					//	Debug.Assert(xshd.Extensions.Count == 0);
 
 					// round-trip xshd:
 					//					string resourceFileName = Path.Combine(Path.GetTempPath(), resourceName);

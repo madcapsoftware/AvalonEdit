@@ -1,0 +1,367 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="Ruby" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+	<RuleSet>
+		<Keywords color="keyword">
+			<Word>and</Word>
+			<Word>then</Word>
+			<Word>defined</Word>
+			<Word>def</Word>
+			<Word>module</Word>
+			<Word>in</Word>
+			<Word>return</Word>
+			<Word>redo</Word>
+			<Word>if</Word>
+			<Word>BEGIN</Word>
+			<Word>retry</Word>
+			<Word>end</Word>
+			<Word>for</Word>
+			<Word>self</Word>
+			<Word>when</Word>
+			<Word>next</Word>
+			<Word>until</Word>
+			<Word>do</Word>
+			<Word>begin</Word>
+			<Word>unless</Word>
+			<Word>END</Word>
+			<Word>rescue</Word>
+			<Word>else</Word>
+			<Word>break</Word>
+			<Word>undef</Word>
+			<Word>not</Word>
+			<Word>super</Word>
+			<Word>class</Word>
+			<Word>case</Word>
+			<Word>require</Word>
+			<Word>yield</Word>
+			<Word>alias</Word>
+			<Word>while</Word>
+			<Word>ensure</Word>
+			<Word>elsif</Word>
+			<Word>or</Word>
+			<Word>include</Word>
+			<Word>attr_reader</Word>
+			<Word>attr_writer</Word>
+			<Word>attr_accessor</Word>
+		</Keywords>
+		<Keywords color="literal">
+			<Word>true</Word>
+			<Word>false</Word>
+			<Word>nil</Word>
+		</Keywords>
+		<Span ruleSet="RuleSet0" color="comment">
+			<Begin>\#</Begin>
+			<End>$</End>
+		</Span>
+		<Span ruleSet="RuleSet1" multiline="true" color="comment">
+			<Begin>^\=begin</Begin>
+			<End>^\=end</End>
+		</Span>
+		<Rule>^\s*=&gt;</Rule>
+		<Rule color="meta">^([&gt;?]&gt;|[\w#]+\(\w+\):\d+:\d+&gt;|(\w+-)?\d+\.\d+\.\d(p\d+)?[^&gt;]+&gt;)</Rule>
+		<Span multiline="true" color="string" ruleSet="DoubleQuoteStringRules">
+			<Begin>"</Begin>
+			<End>"</End>
+		</Span>
+		<Span color="string" ruleSet="NonInterpolableString">
+			<Begin>'</Begin>
+			<End>'</End>
+		</Span>
+		<Span color="string" multiline="true" ruleSet="NonInterpolableString">
+			<Begin>%\/</Begin>
+			<End>\/</End>
+		</Span>
+		<Span color="string" multiline="true" ruleSet="NonInterpolableString">
+			<Begin>&lt;&lt;STRING</Begin>
+			<End>STRING</End>
+		</Span>
+		<Span color="string">
+			<!--REGEX-->
+			<Begin>\/</Begin>
+			<End>\/</End>
+		</Span>
+		<Span>
+			<Begin>\#&lt;</Begin>
+			<End>&gt;</End>
+		</Span>
+		<Span ruleSet="RuleSet17">
+			<Begin color="keyword">\b(class|module) </Begin>
+			<End>$|;</End>
+		</Span>
+		<Span ruleSet="RuleSet18">
+			<Begin color="keyword">\bdef </Begin>
+			<End>$|(?&lt;=(;|\)))</End>
+		</Span>
+		<Rule>[a-zA-Z]\w*::</Rule>
+		<Rule color="symbol">[a-zA-Z_]\w*(\!|\?)?:</Rule>
+		<Rule color="symbol">:\w+</Rule>
+		<Rule color="number">(\b0[0-7_]+)|(\b0x[0-9a-fA-F_]+)|(\b[1-9][0-9_]*(\.[0-9_]+)?)|[0_]\b</Rule>
+		<Rule>(\$\W)|((\$|\@\@?)(\w+))</Rule>
+		<Span ruleSet="RuleSet32">
+			<Begin>\|</Begin>
+			<End>/\|/</End>
+		</Span>
+		<Rule>(!|!=|!==|%|%=|&amp;|&amp;&amp;|&amp;=|\*|\*=|\+|\+=|,|-|-=|/=|/|:|;|&lt;&lt;|&lt;&lt;=|&lt;=|&lt;|===|==|=|&gt;&gt;&gt;=|&gt;&gt;=|&gt;=|&gt;&gt;&gt;|&gt;&gt;|&gt;|\?|\[|\{|\(|\^|\^=|\||\|=|\|\||~|unless)\s*</Rule>
+		<Span ruleSet="RuleSet0" color="comment">
+			<Begin>\#</Begin>
+			<End>$</End>
+		</Span>
+		<Span ruleSet="RuleSet1" color="comment">
+			<Begin>^\=begin</Begin>
+			<End>^\=end</End>
+		</Span>
+		<Span ruleSet="RuleSet2" color="comment">
+			<Begin>^__END__</Begin>
+			<End>\n$</End>
+		</Span>
+	</RuleSet>
+	<RuleSet name="RuleSet0">
+		<Rule>@[A-Za-z]+</Rule>
+		<Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+		<Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+	</RuleSet>
+	<RuleSet name="RuleSet1">
+		<Rule>@[A-Za-z]+</Rule>
+		<Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+		<Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+	</RuleSet>
+	<RuleSet name="RuleSet2">
+		<Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+		<Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+	</RuleSet>
+	<RuleSet name="DoubleQuoteStringRules">
+		<Span>
+			<Begin>\\</Begin>
+			<End>.</End>
+		</Span>
+		<Span ruleSet="RuleSet32" foreground="black">
+			<Begin color="meta">\#\{</Begin>
+			<End color="meta">}</End>
+		</Span>
+	</RuleSet>
+	<RuleSet name="NonInterpolableString">
+		<Span>
+			<Begin>\\</Begin>
+			<End>.</End>
+		</Span>
+	</RuleSet>
+	<RuleSet name="RuleSet17">
+		<Rule color="title">[A-Za-z_]\w*(::\w+)*(\?|\!)?</Rule>
+		<Rule>&lt;\s*</Rule>
+		<Span ruleSet="RuleSet0" color="comment">
+			<Begin>\#</Begin>
+			<End>$</End>
+		</Span>
+		<Span ruleSet="RuleSet1" color="comment">
+			<Begin>^\=begin</Begin>
+			<End>^\=end</End>
+		</Span>
+		<Span ruleSet="RuleSet2" color="comment">
+			<Begin>^__END__</Begin>
+			<End>\n$</End>
+		</Span>
+	</RuleSet>
+	<RuleSet name="RuleSet18">
+		<Rule color="title">[a-zA-Z_]\w*[!?=]?|[-+~]\@|&lt;&lt;|&gt;&gt;|=~|===?|&lt;=&gt;|[&lt;&gt;]=?|\*\*|[-/+%^&amp;*~`|]|\[\]=?</Rule>
+		<Span ruleSet="RuleSet19">
+			<Begin>\(</Begin>
+			<End>\)</End>
+		</Span>
+		<Span ruleSet="RuleSet0" color="comment">
+			<Begin>\#</Begin>
+			<End>$</End>
+		</Span>
+		<Span ruleSet="RuleSet1" color="comment">
+			<Begin>^\=begin</Begin>
+			<End>^\=end</End>
+		</Span>
+		<Span ruleSet="RuleSet2" color="comment">
+			<Begin>^__END__</Begin>
+			<End>\n$</End>
+		</Span>
+	</RuleSet>
+	<RuleSet name="RuleSet19">
+		<Keywords color="keyword">
+			<Word>and</Word>
+			<Word>then</Word>
+			<Word>defined</Word>
+			<Word>def</Word>
+			<Word>module</Word>
+			<Word>in</Word>
+			<Word>return</Word>
+			<Word>redo</Word>
+			<Word>if</Word>
+			<Word>BEGIN</Word>
+			<Word>retry</Word>
+			<Word>end</Word>
+			<Word>for</Word>
+			<Word>self</Word>
+			<Word>when</Word>
+			<Word>next</Word>
+			<Word>until</Word>
+			<Word>do</Word>
+			<Word>begin</Word>
+			<Word>unless</Word>
+			<Word>END</Word>
+			<Word>rescue</Word>
+			<Word>else</Word>
+			<Word>break</Word>
+			<Word>undef</Word>
+			<Word>not</Word>
+			<Word>super</Word>
+			<Word>class</Word>
+			<Word>case</Word>
+			<Word>require</Word>
+			<Word>yield</Word>
+			<Word>alias</Word>
+			<Word>while</Word>
+			<Word>ensure</Word>
+			<Word>elsif</Word>
+			<Word>or</Word>
+			<Word>include</Word>
+			<Word>attr_reader</Word>
+			<Word>attr_writer</Word>
+			<Word>attr_accessor</Word>
+		</Keywords>
+		<Keywords color="literal">
+			<Word>true</Word>
+			<Word>false</Word>
+			<Word>nil</Word>
+		</Keywords>
+		<Span multiline="true" color="string" ruleSet="DoubleQuoteStringRules">
+			<Begin>"</Begin>
+			<End>"</End>
+		</Span>
+		<Span color="string" ruleSet="NonInterpolableString">
+			<Begin>'</Begin>
+			<End>'</End>
+		</Span>
+		<Span color="string" multiline="true" ruleSet="NonInterpolableString">
+			<Begin>%\/</Begin>
+			<End>\/</End>
+		</Span>
+		<Span color="string" multiline="true" ruleSet="NonInterpolableString">
+			<Begin>&lt;&lt;STRING</Begin>
+			<End>STRING</End>
+		</Span>
+		<Span color="string">
+			<!--REGEX-->
+			<Begin>\/</Begin>
+			<End>\/</End>
+		</Span>
+		<Span>
+			<Begin>\#&lt;</Begin>
+			<End>&gt;</End>
+		</Span>
+		<Span ruleSet="RuleSet17">
+			<Begin color="keyword">\b(class|module) </Begin>
+			<End>$|;</End>
+		</Span>
+		<Span ruleSet="RuleSet18">
+			<Begin color="keyword">\bdef </Begin>
+			<End>$|(?&lt;=(;|\)))</End>
+		</Span>
+		<Rule>[a-zA-Z]\w*::</Rule>
+		<Rule color="symbol">[a-zA-Z_]\w*(\!|\?)?:</Rule>
+		<Rule color="symbol">:\w+</Rule>
+		<Rule color="number">(\b0[0-7_]+)|(\b0x[0-9a-fA-F_]+)|(\b[1-9][0-9_]*(\.[0-9_]+)?)|[0_]\b</Rule>
+		<Rule>(\$\W)|((\$|\@\@?)(\w+))</Rule>
+		<Span ruleSet="RuleSet32">
+			<Begin>\|</Begin>
+			<End>/\|/</End>
+		</Span>
+		<Rule>(!|!=|!==|%|%=|&amp;|&amp;&amp;|&amp;=|\*|\*=|\+|\+=|,|-|-=|/=|/|:|;|&lt;&lt;|&lt;&lt;=|&lt;=|&lt;|===|==|=|&gt;&gt;&gt;=|&gt;&gt;=|&gt;=|&gt;&gt;&gt;|&gt;&gt;|&gt;|\?|\[|\{|\(|\^|\^=|\||\|=|\|\||~|unless)\s*</Rule>
+		<Span ruleSet="RuleSet0" color="comment">
+			<Begin>\#</Begin>
+			<End>$</End>
+		</Span>
+		<Span ruleSet="RuleSet1" color="comment">
+			<Begin>^\=begin</Begin>
+			<End>^\=end</End>
+		</Span>
+		<Span ruleSet="RuleSet2" color="comment">
+			<Begin>^__END__</Begin>
+			<End>\n$</End>
+		</Span>
+	</RuleSet>
+	<RuleSet name="RuleSet32">
+		<Keywords color="keyword">
+			<Word>and</Word>
+			<Word>then</Word>
+			<Word>defined</Word>
+			<Word>def</Word>
+			<Word>module</Word>
+			<Word>in</Word>
+			<Word>return</Word>
+			<Word>redo</Word>
+			<Word>if</Word>
+			<Word>BEGIN</Word>
+			<Word>retry</Word>
+			<Word>end</Word>
+			<Word>for</Word>
+			<Word>self</Word>
+			<Word>when</Word>
+			<Word>next</Word>
+			<Word>until</Word>
+			<Word>do</Word>
+			<Word>begin</Word>
+			<Word>unless</Word>
+			<Word>END</Word>
+			<Word>rescue</Word>
+			<Word>else</Word>
+			<Word>break</Word>
+			<Word>undef</Word>
+			<Word>not</Word>
+			<Word>super</Word>
+			<Word>class</Word>
+			<Word>case</Word>
+			<Word>require</Word>
+			<Word>yield</Word>
+			<Word>alias</Word>
+			<Word>while</Word>
+			<Word>ensure</Word>
+			<Word>elsif</Word>
+			<Word>or</Word>
+			<Word>include</Word>
+			<Word>attr_reader</Word>
+			<Word>attr_writer</Word>
+			<Word>attr_accessor</Word>
+		</Keywords>
+		<Keywords color="literal">
+			<Word>true</Word>
+			<Word>false</Word>
+			<Word>nil</Word>
+		</Keywords>
+		<Span multiline="true" color="string" ruleSet="DoubleQuoteStringRules">
+			<Begin>"</Begin>
+			<End>"</End>
+		</Span>
+		<Span color="string" ruleSet="NonInterpolableString">
+			<Begin>'</Begin>
+			<End>'</End>
+		</Span>
+		<Span color="string" multiline="true" ruleSet="NonInterpolableString">
+			<Begin>%\/</Begin>
+			<End>\/</End>
+		</Span>
+		<Span color="string" multiline="true" ruleSet="NonInterpolableString">
+			<Begin>&lt;&lt;STRING</Begin>
+			<End>STRING</End>
+		</Span>
+		<Span color="string">
+			<!--REGEX-->
+			<Begin>\/</Begin>
+			<End>\/</End>
+		</Span>
+		<Rule color="symbol">[a-zA-Z_]\w*(\!|\?)?:</Rule>
+		<Rule color="symbol">:\w+</Rule>
+		<Rule color="number">(\b0[0-7_]+)|(\b0x[0-9a-fA-F_]+)|(\b[1-9][0-9_]*(\.[0-9_]+)?)|[0_]\b</Rule>
+	</RuleSet>
+	<Color name="comment" foreground="#969896"/>
+	<Color name="meta" foreground="#969896"/>
+	<Color name="string" foreground="#df5000"/>
+	<Color name="keyword" foreground="#a71d5d"/>
+	<Color name="literal" foreground="#0086b3"/>
+	<Color name="symbol" foreground="#0086b3"/>
+	<Color name="title" foreground="#795da3"/>
+	<Color name="number" foreground="#005cc5"/>
+</SyntaxDefinition>

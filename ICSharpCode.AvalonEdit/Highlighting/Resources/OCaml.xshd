@@ -1,0 +1,131 @@
+<?xml version="1.0"?>
+<SyntaxDefinition name="OCaml" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+  <RuleSet>
+    <Keywords color="keyword">
+      <Word>and</Word>
+      <Word>as</Word>
+      <Word>assert</Word>
+      <Word>asr</Word>
+      <Word>begin</Word>
+      <Word>class</Word>
+      <Word>constraint</Word>
+      <Word>do</Word>
+      <Word>done</Word>
+      <Word>downto</Word>
+      <Word>else</Word>
+      <Word>end</Word>
+      <Word>exception</Word>
+      <Word>external</Word>
+      <Word>for</Word>
+      <Word>fun</Word>
+      <Word>function</Word>
+      <Word>functor</Word>
+      <Word>if</Word>
+      <Word>in</Word>
+      <Word>include</Word>
+      <Word>inherit!</Word>
+      <Word>inherit</Word>
+      <Word>initializer</Word>
+      <Word>land</Word>
+      <Word>lazy</Word>
+      <Word>let</Word>
+      <Word>lor</Word>
+      <Word>lsl</Word>
+      <Word>lsr</Word>
+      <Word>lxor</Word>
+      <Word>match</Word>
+      <Word>method!|10</Word>
+      <Word>method</Word>
+      <Word>mod</Word>
+      <Word>module</Word>
+      <Word>mutable</Word>
+      <Word>new</Word>
+      <Word>object</Word>
+      <Word>of</Word>
+      <Word>open!</Word>
+      <Word>open</Word>
+      <Word>or</Word>
+      <Word>private</Word>
+      <Word>rec</Word>
+      <Word>sig</Word>
+      <Word>struct</Word>
+      <Word>then</Word>
+      <Word>to</Word>
+      <Word>try</Word>
+      <Word>type</Word>
+      <Word>val!</Word>
+      <Word>val</Word>
+      <Word>virtual</Word>
+      <Word>when</Word>
+      <Word>while</Word>
+      <Word>with</Word>
+      <Word>parser</Word>
+      <Word>value</Word>
+    </Keywords>
+    <Keywords color="built_in">
+      <Word>array</Word>
+      <Word>bool</Word>
+      <Word>bytes</Word>
+      <Word>char</Word>
+      <Word>exn|5</Word>
+      <Word>float</Word>
+      <Word>int</Word>
+      <Word>int32</Word>
+      <Word>int64</Word>
+      <Word>list</Word>
+      <Word>lazy_t|5</Word>
+      <Word>nativeint|5</Word>
+      <Word>string</Word>
+      <Word>unit</Word>
+      <Word>in_channel</Word>
+      <Word>out_channel</Word>
+      <Word>ref</Word>
+    </Keywords>
+    <Keywords color="literal">
+      <Word>true</Word>
+      <Word>false</Word>
+    </Keywords>
+    <Rule color="literal">\[(\|\|)?\]|\(\)</Rule>
+    <Span ruleSet="RuleSet0" color="comment" multiline="true">
+      <Begin>\(\*</Begin>
+      <End>\*\)</End>
+    </Span>
+    <Rule color="symbol">'[A-Za-z_](?!')[\w']*</Rule>
+    <Rule color="type">`[A-Z][\w']*</Rule>
+    <Rule color="type">\b[A-Z][\w']*</Rule>
+    <Rule>[a-z_]\w*'[\w']*</Rule>
+    <Span ruleSet="RuleSet1" color="string">
+      <Begin>'</Begin>
+      <End>'</End>
+    </Span>
+    <Span ruleSet="RuleSet2" color="string">
+      <Begin>"</Begin>
+      <End>"</End>
+    </Span>
+    <Rule color="number">\b(0[xX][a-fA-F0-9_]+[Lln]?|0[oO][0-7_]+[Lln]?|0[bB][01_]+[Lln]?|[0-9][0-9_]*([Lln]|(\.[0-9_]*)?([eE][-+]?[0-9_]+)?)?)</Rule>
+    <Rule>[-=]&gt;</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet0">
+    <Span ruleSet="RuleSet0" color="comment">
+      <Begin>\(\*</Begin>
+      <End>\*\)</End>
+    </Span>
+    <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
+    <Rule>(?:TODO|FIXME|NOTE|BUG|XXX):</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet1">
+    <Rule>\\[\s\S]</Rule>
+  </RuleSet>
+  <RuleSet name="RuleSet2">
+    <Rule>\\[\s\S]</Rule>
+    <Rule>\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]</Rule>
+  </RuleSet>
+  <Color name="comment" foreground="#969896"/>
+  <Color name="string" foreground="#df5000"/>
+  <Color name="keyword" foreground="#a71d5d"/>
+  <Color name="number" foreground="#0086b3"/>
+  <Color name="type" foreground="#a71d5d"/>
+  <Color name="literal" foreground="#0086b3"/>
+  <Color name="symbol" foreground="#0086b3"/>
+  <Color name="built_in" foreground="#0086b3"/>
+</SyntaxDefinition>
