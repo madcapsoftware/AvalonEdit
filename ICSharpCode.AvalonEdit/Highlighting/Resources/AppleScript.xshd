@@ -183,8 +183,7 @@
     </Span>
   </RuleSet>
   <RuleSet name="RuleSet0">
-    <Rule>\\[\s\S]</Rule>
-    <Rule>\\[abfnrtv]\|\\x[0-9a-fA-F]*\\\|%[-+# *.0-9]*[dioxXucsfeEgGp]</Rule>
+    <Span begin="\\" end="."/>
   </RuleSet>
   <RuleSet name="RuleSet1">
     <Rule>\b(a|an|the|are|I'm|isn't|don't|doesn't|won't|but|just|should|pretty|simply|enough|gonna|going|wtf|so|such|will|you|your|they|like|more)\b</Rule>
