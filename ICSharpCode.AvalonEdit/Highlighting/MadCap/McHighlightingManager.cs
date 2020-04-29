@@ -8,7 +8,7 @@ namespace ICSharpCode.AvalonEdit.Highlighting
 {
     public static class McHighlightingManager
     {
-        static readonly string CssLanguageNames = "ActionScript AppleScript D Erlang Go Haskell Lua Makefile MATLAB ObjectiveC OCaml R SQL Ruby Scala Bash Batch PlainText";
+        static readonly string CssLanguageNames = /*NUI*/"ActionScript AppleScript D Erlang Go Haskell Lua Makefile MATLAB ObjectiveC OCaml R SQL Ruby Scala Bash Batch PlainText";
 
         #region Convert between CSS / AvalonEdit
 
@@ -51,9 +51,27 @@ namespace ICSharpCode.AvalonEdit.Highlighting
             var langArr = CssLanguageNames.Split(' ');
             foreach (string lang in langArr)
             {
-				hm.RegisterHighlighting(GetAvalonLanguageName(lang), new string[0], $"{lang}.xshd");
+                RegisterLanguage(hm, lang);
             }
             hm.SortDefinitions();
+        }
+
+        static void RegisterLanguage(HighlightingManager.DefaultHighlightingManager hm, string cssLanguageName)
+        {
+            // Load our custom highlighting definition
+            IHighlightingDefinition customHighlighting;
+            using (Stream s = typeof(McHighlightingManager).Assembly.GetManifestResourceStream(Resources.Prefix + cssLanguageName + ".xshd"))
+            {
+                if (s == null)
+                    throw new InvalidOperationException("Could not find embedded resource");
+                using (XmlReader reader = new XmlTextReader(s))
+                {
+                    customHighlighting = Xshd.HighlightingLoader.Load(reader, HighlightingManager.Instance);
+                }
+            }
+            // and register it in the HighlightingManager
+            string avalonLangName = GetAvalonLanguageName(cssLanguageName);
+            hm.RegisterHighlighting(avalonLangName, new string[] { }, customHighlighting);
         }
         #endregion
     }
